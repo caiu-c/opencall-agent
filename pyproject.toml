@@ -1,0 +1,12 @@
+[project]
+name = "opencall-agent"
+version = "0.1.0"
+description = "Agentic RAG for call center (OpenCall) — LangGraph + LiteLLM + Qdrant"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "langgraph>=1.1.8",
+    "litellm>=1.83.9",
+    "python-dotenv>=1.0.1",
+    "qdrant-client>=1.17.1",
+]
