@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+
+# uv
+.uv/
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Qdrant local storage (bind mount)
+qdrant_data/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
