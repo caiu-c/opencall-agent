@@ -33,9 +33,17 @@ docker run -d --name opencall-qdrant -p 6333:6333 -p 6334:6334 \
 # Dependências Python
 uv sync
 
+# (opcional) configuração por env — defaults funcionam sem .env
+cp .env.example .env
+
 # Smoke test (LLM + embedding + Qdrant round-trip)
-uv run main.py
+uv run opencall-smoke
+
+# Testes unitários
+uv run pytest
 ```
+
+Especificação do projeto em [`docs/`](./docs/): requisitos, plano de testes e plano de execução (EN + PT-BR).
 
 ## Status
 
