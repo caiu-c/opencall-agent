@@ -82,7 +82,7 @@ Three execution layers plus a separate quality track:
 | NFR-2 latency | Acceptance test `test_agent_answers_under_8s` (p95 over 20 runs) |
 | NFR-6 observability | Acceptance test asserts trace has retrieval + llm spans |
 | NFR-7 reproducibility | CI runs `uv sync --frozen` |
-| NFR-8 portability | Integration test parameterized over `LLM_PROVIDER={ollama, anthropic}` (anthropic skipped if no key) |
+| NFR-8 portability | Integration test parameterized over `LLM_PROVIDER={ollama, openai}` (openai skipped if no key) |
 | NFR-9 offline | CI job with network disabled post-setup |
 | NFR-10 PII hygiene | Unit test for scrubber + integration test asserting log capture contains no raw PII |
 

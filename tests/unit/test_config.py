@@ -24,12 +24,12 @@ def test_defaults_applied(monkeypatch: pytest.MonkeyPatch, tmp_path) -> None:
 
 def test_env_overrides_defaults(monkeypatch: pytest.MonkeyPatch, tmp_path) -> None:
     monkeypatch.chdir(tmp_path)
-    monkeypatch.setenv("OPENCALL_LLM_MODEL", "anthropic/claude-sonnet-4-6")
+    monkeypatch.setenv("OPENCALL_LLM_MODEL", "openai/gpt-4o-mini")
     monkeypatch.setenv("OPENCALL_LLM_TEMPERATURE", "0.4")
     monkeypatch.setenv("OPENCALL_RETRIEVAL_TOP_K", "10")
 
     s = get_settings()
-    assert s.llm_model == "anthropic/claude-sonnet-4-6"
+    assert s.llm_model == "openai/gpt-4o-mini"
     assert s.llm_temperature == 0.4
     assert s.retrieval_top_k == 10
 
