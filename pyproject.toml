@@ -10,10 +10,11 @@ dependencies = [
     "pydantic-settings>=2.11.0",
     "python-dotenv>=1.0.1",
     "qdrant-client>=1.17.1",
+    "typer>=0.23.0",
 ]
 
 [project.scripts]
-opencall-smoke = "opencall_agent.smoke:main"
+opencall = "opencall_agent.cli:app"
 
 [dependency-groups]
 dev = [
@@ -30,3 +31,7 @@ packages = ["src/opencall_agent"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-ra --strict-markers"
+markers = [
+    "integration: requires live Qdrant + Ollama services",
+    "acceptance: user-story-level end-to-end test",
+]

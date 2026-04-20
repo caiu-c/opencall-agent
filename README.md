@@ -37,9 +37,12 @@ uv sync
 cp .env.example .env
 
 # Smoke test (LLM + embedding + Qdrant round-trip)
-uv run opencall-smoke
+uv run opencall smoke
 
-# Testes unitários
+# Ingerir um documento na base de conhecimento
+uv run opencall ingest data/samples/politica_trocas.txt --category politica
+
+# Testes (unit só por padrão; integration/acceptance rodam se serviços estiverem up)
 uv run pytest
 ```
 
@@ -47,10 +50,14 @@ Especificação do projeto em [`docs/`](./docs/): requisitos, plano de testes e 
 
 ## Status
 
-- [x] Stack validada via smoke test
-- [ ] Ingestão de documentos (transcrições de chamadas)
-- [ ] Pipeline RAG (chunk → embed → index → retrieve)
-- [ ] Grafo LangGraph com agente + tool de retrieval
-- [ ] Avaliação (ragas ou similar)
-- [ ] Observabilidade (traces)
-- [ ] Deployment
+- [x] M0 — Stack validada via smoke test
+- [x] M1 — Package scaffold + camada de config
+- [x] M2 — Ingestão de documentos (TXT/MD → chunk → embed → Qdrant)
+- [ ] M3 — Corpus de amostra + gold set
+- [ ] M4 — Pipeline RAG básico (CLI ask)
+- [ ] M5 — Agente LangGraph
+- [ ] M6 — Filtros de metadados
+- [ ] M7 — Harness de avaliação (ragas)
+- [ ] M8 — Observabilidade
+- [ ] M9 — API HTTP
+- [ ] M10 — Deploy
