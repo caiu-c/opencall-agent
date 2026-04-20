@@ -42,6 +42,9 @@ uv run opencall smoke
 # Ingerir um documento na base de conhecimento
 uv run opencall ingest data/samples/politica_trocas.txt --category politica
 
+# Ingerir o corpus completo (categoria inferida pelo prefixo do nome)
+uv run opencall ingest-dir data/samples --reset
+
 # Testes (unit só por padrão; integration/acceptance rodam se serviços estiverem up)
 uv run pytest
 ```
@@ -53,7 +56,7 @@ Especificação do projeto em [`docs/`](./docs/): requisitos, plano de testes e 
 - [x] M0 — Stack validada via smoke test
 - [x] M1 — Package scaffold + camada de config
 - [x] M2 — Ingestão de documentos (TXT/MD → chunk → embed → Qdrant)
-- [ ] M3 — Corpus de amostra + gold set
+- [x] M3 — Corpus de amostra + gold set
 - [ ] M4 — Pipeline RAG básico (CLI ask)
 - [ ] M5 — Agente LangGraph
 - [ ] M6 — Filtros de metadados

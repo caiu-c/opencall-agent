@@ -1,0 +1,42 @@
+POLÍTICA — ROTULAGEM, BULA E EMBALAGEM
+
+Base normativa: RDC ANVISA 71/2009 (rotulagem), RDC ANVISA 47/2009 (bula),
+RDC ANVISA 80/2006 (fracionamento).
+
+Rotulagem (RDC 71/2009):
+- Nome comercial (quando houver) e Denominação Comum Brasileira (DCB).
+- Concentração, forma farmacêutica e via de administração.
+- Número de lote, data de fabricação e validade.
+- Registro MS (número do processo ANVISA).
+- Farmacêutico responsável técnico e CRF.
+- Empresa detentora do registro.
+- Tarjas de identificação:
+  • Vermelha — medicamento sujeito a prescrição médica.
+  • Preta — medicamento de controle especial (Portaria 344/1998).
+  • Amarela com "G" — medicamento genérico (Lei 9.787/1999).
+  • Sem tarja — medicamento isento de prescrição, com símbolo "MIP".
+- Letra mínima e contraste regulamentados para legibilidade.
+
+Bula (RDC 47/2009):
+- Duas versões obrigatórias: bula profissional (para prescritor e
+  farmacêutico) e bula para o paciente (linguagem acessível).
+- Seções obrigatórias para o paciente: "Para que este medicamento é
+  indicado?", "Como este medicamento funciona?", "Quando não devo usar?",
+  "O que devo saber antes de usar?", "Onde, como e por quanto tempo posso
+  guardar?", "Como devo usar?", "O que devo fazer se esquecer?", "Quais os
+  males que este medicamento pode causar?", "Dizeres legais".
+- A versão eletrônica atualizada é obrigatoriamente disponibilizada pela
+  empresa no Bulário Eletrônico da ANVISA (consulta.anvisa.gov.br/bulario).
+
+Fracionamento (RDC 80/2006):
+- Só é permitido em medicamentos com embalagens específicas certificadas
+  pela ANVISA como "fracionáveis".
+- O farmacêutico identifica cada fração com rótulo com os mesmos dados da
+  embalagem original, em etiqueta indelével.
+- Fracionamento de antimicrobianos, controlados e estéreis tem requisitos
+  adicionais.
+
+Orientação ao paciente: o atendimento farmacêutico sempre reforça a leitura
+da bula, o armazenamento correto (temperatura, luz, umidade) e o prazo de
+validade. Medicamentos com embalagem violada ou com validade expirada não
+podem ser dispensados sob nenhuma hipótese.

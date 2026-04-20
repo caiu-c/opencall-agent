@@ -1,0 +1,42 @@
+PERGUNTAS FREQUENTES — RECEITA DIGITAL
+
+Receita digital tem o mesmo valor de uma receita em papel?
+Sim, desde que atenda à Lei 14.063/2020 (assinatura eletrônica avançada ou
+qualificada) e à RDC 471/2021 da ANVISA. A validação é feita por QR Code ou
+hash.
+
+Como a farmácia verifica a assinatura?
+Escaneando o QR Code da receita ou acessando o link de validação da
+plataforma emissora. O sistema confirma autenticidade e validade; a farmácia
+registra o identificador único para impedir reuso em outra unidade.
+
+Uma foto ou PDF escaneado de uma receita em papel serve como receita digital?
+Não. Receita digital é um documento gerado e assinado eletronicamente com
+certificado válido; uma foto ou scan não permite verificação da assinatura e
+não é aceita.
+
+Quais medicamentos posso comprar com receita digital?
+- Medicamentos isentos de prescrição: não exigem receita.
+- Tarjados comuns: receita digital com assinatura avançada.
+- Antimicrobianos: receita digital com assinatura avançada ou qualificada.
+- Controlados C1, C2, C4, C5: receita digital com assinatura qualificada
+  (ICP-Brasil).
+- Controlados A, B1, B2: apenas notificação física em papel oficial.
+
+O que é assinatura qualificada (ICP-Brasil)?
+É a assinatura eletrônica feita com certificado digital emitido por uma
+Autoridade Certificadora da Infraestrutura de Chaves Públicas Brasileira.
+Tem o mesmo valor jurídico da assinatura autenticada em cartório.
+
+A receita digital vale em qualquer estado?
+Sim, com as mesmas regras de validade territorial dos medicamentos
+correspondentes em receita física.
+
+Posso guardar a receita digital para usar depois?
+Você pode usar a receita dentro do prazo de validade (30 dias para
+controlados e tarjados; 10 dias para antimicrobianos). Após a dispensação,
+o identificador é marcado como utilizado e não pode ser reusado.
+
+E se o QR Code não for lido pela farmácia?
+Peça ao prescritor um link alternativo de validação ou a reemissão. A
+farmácia não pode dispensar sem validação.

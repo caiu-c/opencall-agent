@@ -1,0 +1,45 @@
+POLÍTICA — FARMÁCIA DE MANIPULAÇÃO
+
+Base normativa: RDC ANVISA 67/2007, RDC 87/2008 (estéreis), RDC 214/2006
+(controlados).
+
+A manipulação de preparações magistrais (por prescrição individualizada) e
+oficinais (constantes em formulários oficiais) segue as Boas Práticas de
+Manipulação (BPM) da RDC 67/2007.
+
+Requisitos estruturais:
+- Responsável técnico farmacêutico em tempo integral durante o funcionamento.
+- Áreas segregadas por tipo de forma farmacêutica: sólidos, semissólidos,
+  líquidos orais, líquidos não-orais.
+- Área exclusiva para manipulação de antibióticos, hormônios, citotóxicos e
+  controlados.
+- Sala de pesagem com balança calibrada e registro rastreável.
+- Controle ambiental de temperatura, umidade e partículas conforme a classe.
+
+Requisitos operacionais:
+- Recebimento e quarentena de matéria-prima acompanhadas de certificado de
+  análise do fabricante.
+- Ensaios internos (mínimos): identidade, aspecto, características
+  organolépticas.
+- Ordem de manipulação numerada sequencialmente e arquivada por 5 anos.
+- Rótulo com identificação do paciente, princípio(s) ativo(s), concentração,
+  via, posologia, lote, validade, responsável técnico e nome do paciente.
+
+Prazo de validade:
+- Definido por estudo de estabilidade ou, na ausência, por regra conservadora
+  (exemplo: cápsulas e comprimidos = no máximo 120 dias; xaropes aquosos
+  = 30 dias após reconstituição, se aplicável).
+
+Manipulação de controlados:
+- Ordem de manipulação referenciada à notificação/receita original.
+- Escrituração no SNGPC em até 7 dias.
+- Manter cópia da receita por 2 anos.
+
+Manipulação de estéreis (RDC 87/2008):
+- Ambiente classificado (Classe A dentro de Classe B para formas estéreis).
+- Uso de fluxo laminar, vestimenta adequada e validação do processo.
+
+O paciente que recebe preparação magistral recebe orientação farmacêutica
+sobre administração, armazenamento e descarte. A devolução segue as mesmas
+regras sanitárias (não aceita após saída do estabelecimento, exceto em
+recall ou desvio).

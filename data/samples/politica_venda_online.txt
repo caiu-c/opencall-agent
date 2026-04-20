@@ -1,0 +1,45 @@
+POLÍTICA — COMÉRCIO ELETRÔNICO DE MEDICAMENTOS
+
+Base normativa: RDC ANVISA 44/2009, RDC ANVISA 657/2022, CDC art. 49
+(arrependimento).
+
+A venda à distância de medicamentos — site próprio, aplicativo ou
+marketplace — é permitida desde que o estabelecimento virtual seja vinculado
+a uma farmácia física licenciada pela vigilância sanitária estadual, com
+farmacêutico responsável técnico identificado.
+
+Informações obrigatórias no canal digital:
+- Razão social e CNPJ do estabelecimento.
+- Endereço físico da farmácia vinculada.
+- Nome completo e inscrição CRF do farmacêutico responsável.
+- Autoridade sanitária e número da licença.
+- Canal de atendimento farmacêutico (telefone e chat em tempo útil).
+
+Permitido via e-commerce:
+- Medicamentos isentos de prescrição (MIP).
+- Medicamentos tarjados com receita digital válida, assinada conforme Lei
+  14.063/2020.
+- Antimicrobianos com receita digital válida.
+- Medicamentos controlados das listas C1, C2, C4 e C5 com assinatura
+  qualificada ICP-Brasil (RDC 471/2021).
+
+Vedado via e-commerce:
+- Medicamentos controlados das listas A, B1 e B2, que exigem notificação
+  física em papel oficial (Portaria 344/1998).
+- Autosserviço (sem intervenção do farmacêutico) de tarjados e antimicrobianos.
+- Venda sem validação de receita.
+
+Rastreabilidade no transporte:
+- Medicamentos termolábeis exigem cadeia de frio documentada durante todo o
+  trajeto (registro de temperatura, embalagem isotérmica validada).
+- Controlados exigem embalagem inviolável e entrega com conferência de
+  identidade do destinatário.
+
+Arrependimento: o CDC art. 49 assegura 7 dias para desistência em compra
+não-presencial. Nesse prazo, o cliente devolve o medicamento lacrado, a
+farmácia restitui o valor integral, inclusive frete. Após os 7 dias, aplica-se
+a RDC 44/2009 (proibição de devolução, exceto recall/desvio/erro de
+dispensação).
+
+Marketplaces devem validar a licença sanitária do vendedor antes de permitir
+anúncios de medicamentos.

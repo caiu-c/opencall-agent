@@ -1,0 +1,43 @@
+POLÍTICA — CADEIA DE FRIO PARA MEDICAMENTOS TERMOLÁBEIS
+
+Base normativa: RDC ANVISA 430/2020 (boas práticas de distribuição,
+armazenagem e transporte), instrução normativa de medicamentos biológicos.
+
+Medicamentos termolábeis (vacinas, insulinas, biológicos, alguns colírios e
+antirretrovirais) exigem manutenção de temperatura controlada do fabricante
+ao paciente. Faixas usuais:
+
+- Refrigerado: 2 °C a 8 °C.
+- Congelado: ≤ −15 °C (quando especificado pelo fabricante).
+- Temperatura ambiente controlada: 15 °C a 30 °C.
+
+Requisitos no estabelecimento:
+- Câmaras frias e geladeiras dedicadas, calibradas, com registro contínuo
+  de temperatura (data logger), sistema de alarme e plano de contingência
+  com gerador ou banco de gelo validado.
+- Mapeamento térmico documentado e procedimento operacional padrão (POP).
+- Rotinas de verificação: mínimo duas leituras diárias (manhã e tarde),
+  registradas e assinadas.
+- Excursão térmica: qualquer desvio deve ser registrado com duração, faixa
+  atingida, lotes envolvidos e avaliação do detentor do registro sobre
+  manutenção da qualidade; se não houver parecer favorável, segregação e
+  descarte.
+
+Transporte:
+- Embalagem isotérmica validada com simuladores para o tempo estimado do
+  trajeto, incluindo margem de segurança.
+- Monitor de temperatura acompanhando a carga.
+- Conferência na recepção: qualquer divergência implica recusa ou
+  segregação até avaliação técnica.
+
+Entrega ao paciente (delivery):
+- Orientação escrita sobre a conservação imediata (levar à geladeira em até
+  15 minutos após recebimento).
+- Vedação: não aceitar devolução de termolábil já entregue, mesmo lacrado,
+  pois a farmácia não tem como garantir a cadeia de frio fora do ambiente
+  controlado (conforme RDC 44/2009).
+
+Exceção: em caso de recall ou erro de dispensação, a devolução é aceita com
+descarte imediato, sem reintegração ao estoque.
+
+Registros (mapeamento, rotinas, excursões) mantidos por 5 anos.

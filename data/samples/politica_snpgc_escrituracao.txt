@@ -1,0 +1,43 @@
+POLÍTICA — ESCRITURAÇÃO NO SNGPC
+
+Base normativa: RDC ANVISA 27/2007 e atualizações, Portaria SVS/MS 344/1998.
+
+O Sistema Nacional de Gerenciamento de Produtos Controlados (SNGPC) é o
+sistema eletrônico da ANVISA no qual farmácias e drogarias escrituram
+movimentações de medicamentos sujeitos a controle especial (Portaria 344/1998)
+e de antimicrobianos (RDC 20/2011).
+
+Movimentações escrituradas:
+- Entradas: compra do distribuidor, transferência entre unidades, doação,
+  ajuste de inventário.
+- Saídas: dispensação ao paciente, transferência para outra unidade, perdas,
+  descarte.
+- Inventário periódico (mínimo anual).
+
+Prazos:
+- Escrituração em até 7 dias a contar da movimentação.
+- Balanço mensal enviado ao sistema até o dia 15 do mês subsequente (prazos
+  e formatos sujeitos a atualização normativa; consultar a ANVISA).
+
+Dados obrigatórios na dispensação:
+- Identificação do paciente (CPF), do prescritor (CRM/CRO e UF), número da
+  receita/notificação, medicamento, quantidade, lote e data.
+- Armazenamento eletrônico pelo prazo mínimo de 2 anos.
+
+Procedimento interno:
+1. Recepção da receita/notificação; conferência de validade e completude.
+2. Dispensação com registro imediato no sistema de PDV, que alimenta o
+   SNGPC.
+3. Revisão diária de inconsistências (diferenças entre receita e estoque,
+   rasuras, erros de digitação).
+4. Arquivamento físico das receitas retidas em pasta numerada sequencialmente.
+5. Conciliação semanal entre estoque físico e escriturado.
+
+Acesso da autoridade sanitária: a vigilância sanitária pode auditar os
+registros a qualquer momento. A recusa ou atraso na apresentação configura
+infração sanitária (Lei 6.437/1977), sujeita a multa, interdição ou
+cancelamento da licença.
+
+O farmacêutico responsável técnico responde pela veracidade da escrituração.
+Correções de erro são feitas por estorno eletrônico, com justificativa
+registrada; alterações manuais em histórico são proibidas.

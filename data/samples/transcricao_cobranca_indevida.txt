@@ -1,0 +1,24 @@
+TRANSCRIÇÃO — LIGAÇÃO 0010 — COBRANÇA INDEVIDA
+
+Atendente: OpenCall Farmácia, Beatriz.
+Cliente: Oi Beatriz, fui cobrado duas vezes pela mesma compra no cartão de
+crédito, R$ 187 cada, dia 12. Preciso resolver isso.
+Atendente: Lamento pelo transtorno. Pode me passar o CPF e o número do
+comprovante?
+Cliente: CPF 123.456.789-00. Comprovante, deixa eu ver, é o 7792.
+Atendente: Um momento. Confirmado — a senhora tem duas autorizações idênticas
+no mesmo terminal, na mesma loja, com 4 minutos de diferença. É claro que é
+uma duplicidade técnica, provavelmente o primeiro TEF não confirmou e o
+atendente rodou de novo.
+Cliente: E agora, tenho que esperar três faturas pro estorno?
+Atendente: Não. Pelo artigo 42 do Código de Defesa do Consumidor, cobrança
+indevida pode gerar ressarcimento e nós trabalhamos com estorno imediato
+via cancelamento da transação, que cai no extrato do cartão em até 30 dias
+corridos — a regra da operadora. Já vou abrir o cancelamento da transação
+duplicada.
+Cliente: E se não cair?
+Atendente: A senhora recebe por e-mail o protocolo 44239. Se passar de 30 dias
+sem aparecer o estorno, basta retornar citando esse número que a gente
+escalona pro financeiro e o estorno é feito pelo meio de pagamento cadastrado.
+Cliente: Ótimo. Obrigada pela agilidade.
+Atendente: Eu que agradeço. Bom dia.

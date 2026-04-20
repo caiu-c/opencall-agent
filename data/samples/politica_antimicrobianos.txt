@@ -1,0 +1,39 @@
+POLÍTICA — DISPENSAÇÃO DE ANTIMICROBIANOS
+
+Base normativa: RDC ANVISA 20/2011.
+
+A RDC 20/2011 obriga a dispensação de antimicrobianos mediante prescrição
+médica ou odontológica em duas vias. A segunda via é retida pela farmácia. A
+receita tem validade de 10 dias a contar da data de emissão, em todo o
+território nacional.
+
+Requisitos formais da prescrição:
+- Identificação completa do prescritor (nome, CRM/CRO, UF).
+- Identificação do paciente (nome completo).
+- Nome do medicamento (princípio ativo ou marca), concentração e forma
+  farmacêutica.
+- Posologia, duração do tratamento e data de emissão.
+- Assinatura e, em meio físico, carimbo.
+
+Procedimento na dispensação:
+1. Verificar prazo de validade da receita (≤ 10 dias).
+2. Conferir preenchimento completo. Em caso de dúvida, contatar o prescritor
+   antes de dispensar.
+3. Reter a segunda via física ou o registro eletrônico.
+4. Escriturar no SNGPC em até 7 dias.
+5. Arquivar por pelo menos 2 anos.
+
+Receita digital: aceita quando assinada eletronicamente conforme Lei 14.063/2020
+(assinatura avançada ou qualificada) e validada por QR Code/hash. A farmácia
+registra o identificador para impedir reuso.
+
+Dispensação fracionada: o farmacêutico orienta o paciente a cumprir todo o
+tempo de tratamento prescrito; fracionamento só ocorre para embalagens
+certificadas conforme RDC 80/2006, e sempre sob registro.
+
+Vedação: é proibido dispensar antimicrobianos sem receita válida, reutilizar
+antibiótico sobrando ou compartilhar entre pacientes. Venda sem prescrição
+configura infração sanitária conforme Lei 6.437/1977.
+
+Excepcionalidades constam no Anexo I da RDC 20/2011 (antissépticos tópicos e
+alguns de uso veterinário não controlados pela norma).

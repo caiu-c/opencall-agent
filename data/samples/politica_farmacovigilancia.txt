@@ -1,0 +1,40 @@
+POLÍTICA — FARMACOVIGILÂNCIA E NOTIFICAÇÃO DE EVENTOS ADVERSOS
+
+Base normativa: RDC ANVISA 406/2020, IN 66/2020.
+
+Farmacovigilância é o conjunto de atividades para identificar, avaliar e
+prevenir reações adversas a medicamentos. No Brasil, a plataforma oficial de
+notificação é o VigiMed, que substituiu o Notivisa para medicamentos a
+partir de dezembro de 2018.
+
+Obrigações do detentor de registro (laboratório fabricante ou importador):
+- Manter Sistema de Farmacovigilância com Pessoa Qualificada.
+- Enviar Relatório Periódico de Benefício-Risco (PSUR/RPB) nos prazos
+  regulatórios.
+- Implementar Plano de Gerenciamento de Risco (PGR) quando exigido.
+- Notificar eventos adversos graves em até 15 dias corridos; não-graves em
+  90 dias.
+
+Eventos considerados graves: óbito, risco iminente de morte, hospitalização,
+prolongamento de internação, incapacidade significativa ou persistente,
+anomalia congênita.
+
+Papel da OpenCall (ponto de dispensação):
+
+1. Acolhimento do relato: o farmacêutico ouve ativamente, documenta em
+   ficha interna (data, paciente, medicamento, lote, dose, sintomas, gravidade)
+   e orienta o paciente a procurar seu médico imediatamente em casos graves.
+2. Notificação voluntária no VigiMed: acessível a profissionais de saúde e
+   ao cidadão pelo portal gov.br/anvisa. A notificação não exige comprovação
+   de nexo causal — a análise é da ANVISA.
+3. Queixas técnicas (desvio de qualidade, alteração de cor/odor/sabor,
+   embalagem violada) são notificadas no Notivisa 2.0.
+4. Segregação do lote suspeito até conclusão do caso; contato com o detentor
+   do registro.
+5. Treinamento contínuo da equipe para reconhecer eventos adversos.
+
+Registros internos mantidos por no mínimo 5 anos.
+
+A notificação não substitui o atendimento médico emergencial. Em caso de
+reação anafilática, síndromes dermatológicas graves ou alteração importante
+do estado geral, encaminhar imediatamente a serviço de urgência.
