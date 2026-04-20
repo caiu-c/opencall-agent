@@ -8,6 +8,7 @@ import typer
 
 from .agent import answer as rag_answer
 from .config import get_settings
+from .eval import run_eval, write_reports
 from .ingestion.indexer import ingest_document
 from .vector import make_client
 
@@ -106,6 +107,43 @@ def ask(
         typer.echo(
             f"  [{i}] {src.source} (score={src.score:.3f}, category={src.category})"
         )
+
+
+@app.command("eval")
+def eval_cmd(
+    gold_path: Path = typer.Option(
+        Path("tests/eval/gold.jsonl"),
+        "--gold",
+        help="Path to JSONL gold set.",
+    ),
+    collection: str = typer.Option(
+        DEFAULT_COLLECTION,
+        "--collection",
+        help="Qdrant collection to query.",
+    ),
+    max_rows: int | None = typer.Option(
+        None, "--max-rows", help="Evaluate only the first N rows."
+    ),
+    out_dir: Path = typer.Option(
+        Path("eval_reports"), "--out", help="Directory for JSON/Markdown reports."
+    ),
+    stem: str | None = typer.Option(
+        None, "--stem", help="Override report filename stem (default: UTC timestamp)."
+    ),
+) -> None:
+    """Run the agent over the gold set and emit a report."""
+    settings = get_settings()
+    client = make_client(settings)
+    result = run_eval(settings, client, collection, gold_path, max_rows=max_rows)
+    paths = write_reports(result, out_dir, stem=stem)
+    s = result.summary
+    typer.echo(
+        f"n={s['n']} recall={s['retrieval_recall_mean']:.2%} "
+        f"anchors={s['must_contain_coverage_mean']:.2%} "
+        f"p95={s['latency_p95_s']:.2f}s"
+    )
+    typer.echo(f"wrote {paths['markdown']}")
+    typer.echo(f"wrote {paths['json']}")
 
 
 @app.command("ingest-dir")

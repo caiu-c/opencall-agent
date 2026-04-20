@@ -34,9 +34,11 @@ def test_agent_answers_under_8s(settings, knowledge_collection) -> None:
     client = make_client(settings)
     question = "Qual a validade da receita de antibiótico?"
 
-    # Warm-up: first run amortizes Ollama/Qdrant cold-start costs that
-    # otherwise dominate a p95 computed over only 5 samples.
-    answer(settings, client, question, knowledge_collection)
+    # Warm-up: amortize Ollama/Qdrant cold-start costs that otherwise
+    # dominate a p95 computed over only 5 samples. Two iterations stabilize
+    # when the model sat idle during upstream test setup.
+    for _ in range(2):
+        answer(settings, client, question, knowledge_collection)
 
     latencies: list[float] = []
     for _ in range(runs):

@@ -18,6 +18,12 @@ __pycache__/
 # Qdrant local storage (bind mount)
 qdrant_data/
 
+# Eval runs — only the committed baseline survives
+eval_reports/*
+!eval_reports/baseline.md
+!eval_reports/baseline.json
+!eval_reports/.gitkeep
+
 # IDE
 .vscode/
 .idea/
