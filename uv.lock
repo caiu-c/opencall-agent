@@ -1133,6 +1133,7 @@ dependencies = [
     { name = "pydantic-settings" },
     { name = "python-dotenv" },
     { name = "qdrant-client" },
+    { name = "typer" },
 ]
 
 [package.dev-dependencies]
@@ -1147,6 +1148,7 @@ requires-dist = [
     { name = "pydantic-settings", specifier = ">=2.11.0" },
     { name = "python-dotenv", specifier = ">=1.0.1" },
     { name = "qdrant-client", specifier = ">=1.17.1" },
+    { name = "typer", specifier = ">=0.23.0" },
 ]
 
 [package.metadata.requires-dev]
