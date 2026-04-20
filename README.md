@@ -7,7 +7,7 @@ Agentic RAG para domínio de call center (OpenCall). Projeto portfolio demonstra
 | Camada | Escolha | Por quê |
 |---|---|---|
 | Orquestração | [LangGraph](https://github.com/langchain-ai/langgraph) | State machines explícitas; mais "engenharia" que chain clássico |
-| LLM abstraction | [LiteLLM](https://github.com/BerriAI/litellm) | Troca de provider (Ollama/OpenAI/Anthropic) sem refactor |
+| LLM abstraction | [LiteLLM](https://github.com/BerriAI/litellm) | Troca de provider (Ollama/OpenAI/Azure) sem refactor |
 | LLM (dev) | Ollama `qwen2.5:7b` | Local, zero custo, bom em tool-calling |
 | Embeddings | Ollama `nomic-embed-text` (768-dim) | Rápido, roda em CPU |
 | Vector DB | [Qdrant](https://qdrant.tech) via Docker | Produção-ready, filtering rico |
@@ -61,7 +61,7 @@ Especificação do projeto em [`docs/`](./docs/): requisitos, plano de testes e 
 - [x] M2 — Ingestão de documentos (TXT/MD → chunk → embed → Qdrant)
 - [x] M3 — Corpus de amostra + gold set
 - [x] M4 — Pipeline RAG básico (CLI ask)
-- [ ] M5 — Agente LangGraph
+- [x] M5 — Agente LangGraph
 - [ ] M6 — Filtros de metadados
 - [ ] M7 — Harness de avaliação (ragas)
 - [ ] M8 — Observabilidade

@@ -82,7 +82,7 @@ Três camadas de execução + uma trilha de qualidade separada:
 | NFR-2 latência | Acceptance `test_agent_answers_under_8s` (p95 em 20 runs) |
 | NFR-6 observabilidade | Acceptance verifica trace com spans de retrieval + llm |
 | NFR-7 reprodutibilidade | CI roda `uv sync --frozen` |
-| NFR-8 portabilidade | Integração parametrizada em `LLM_PROVIDER={ollama, anthropic}` (anthropic skipado se sem key) |
+| NFR-8 portabilidade | Integração parametrizada em `LLM_PROVIDER={ollama, openai}` (openai skipado se sem key) |
 | NFR-9 offline | Job de CI com rede desabilitada pós-setup |
 | NFR-10 PII | Unit do scrubber + integração que captura log e verifica ausência de PII |
 
