@@ -16,13 +16,28 @@ Regras invioláveis:
    perguntou.
 """
 
-USER_TEMPLATE = """Pergunta: {question}
+USER_TEMPLATE = """Pergunta: {question}{filter_note}
 
 Contexto recuperado:
 {contexts}
 
 Responda em PT-BR usando apenas o contexto acima. Indique entre colchetes os
 trechos utilizados, por exemplo [1], [2]."""
+
+
+def filter_note(category: str | None) -> str:
+    """Reminder appended to the prompt when a category filter is active.
+
+    The agent hint prevents the LLM from second-guessing absent context — if
+    the filter excluded the relevant document, refusing is preferable to
+    guessing from out-of-scope chunks.
+    """
+    if not category:
+        return ""
+    return (
+        f"\n(Busca restrita à categoria '{category}'. Se o contexto não trouxer "
+        f"a resposta, recuse — não invente a partir de outras fontes.)"
+    )
 
 
 def format_contexts(chunks: list[str]) -> str:

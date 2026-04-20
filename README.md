@@ -62,7 +62,7 @@ Especificação do projeto em [`docs/`](./docs/): requisitos, plano de testes e 
 - [x] M3 — Corpus de amostra + gold set
 - [x] M4 — Pipeline RAG básico (CLI ask)
 - [x] M5 — Agente LangGraph
-- [ ] M6 — Filtros de metadados
+- [x] M6 — Filtros de metadados
 - [ ] M7 — Harness de avaliação (ragas)
 - [ ] M8 — Observabilidade
 - [ ] M9 — API HTTP
