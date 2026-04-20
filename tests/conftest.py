@@ -1,11 +1,25 @@
 from __future__ import annotations
 
+from pathlib import Path
 from urllib.error import URLError
 from urllib.request import urlopen
 
 import pytest
 
 from opencall_agent.config import Settings, get_settings
+from opencall_agent.ingestion.indexer import ingest_document
+from opencall_agent.vector import make_client
+
+ACCEPTANCE_COLLECTION = "acceptance_knowledge"
+SAMPLES_DIR = Path(__file__).resolve().parents[1] / "data" / "samples"
+
+_CATEGORY_BY_PREFIX = {
+    "politica": "politica",
+    "faq": "faq",
+    "transcricao": "transcricao",
+    "produto": "produto",
+    "regulatorio": "regulatorio",
+}
 
 
 def _reachable(url: str, timeout: float = 1.0) -> bool:
@@ -19,6 +33,22 @@ def _reachable(url: str, timeout: float = 1.0) -> bool:
 @pytest.fixture(scope="session")
 def settings() -> Settings:
     return get_settings()
+
+
+@pytest.fixture(scope="session")
+def knowledge_collection(settings: Settings) -> str:
+    """Ingest the sample corpus once per session into an isolated collection."""
+    client = make_client(settings)
+    if client.collection_exists(ACCEPTANCE_COLLECTION):
+        client.delete_collection(ACCEPTANCE_COLLECTION)
+    for path in sorted(SAMPLES_DIR.iterdir()):
+        if not path.is_file() or path.suffix.lower() not in {".txt", ".md"}:
+            continue
+        category = _CATEGORY_BY_PREFIX.get(path.name.split("_", 1)[0].lower())
+        if category is None:
+            continue
+        ingest_document(settings, client, path, category=category, collection=ACCEPTANCE_COLLECTION)
+    return ACCEPTANCE_COLLECTION
 
 
 def _services_up(settings: Settings) -> tuple[bool, bool]:

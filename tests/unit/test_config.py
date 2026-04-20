@@ -18,8 +18,8 @@ def test_defaults_applied(monkeypatch: pytest.MonkeyPatch, tmp_path) -> None:
     assert s.llm_model == "ollama/qwen2.5:7b"
     assert s.embed_model == "ollama/nomic-embed-text"
     assert s.llm_temperature == 0.0
-    assert s.retrieval_top_k == 5
-    assert s.retrieval_score_threshold == 0.5
+    assert s.retrieval_top_k == 3
+    assert s.retrieval_score_threshold == 0.72
 
 
 def test_env_overrides_defaults(monkeypatch: pytest.MonkeyPatch, tmp_path) -> None:
