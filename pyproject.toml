@@ -18,6 +18,7 @@ opencall = "opencall_agent.cli:app"
 
 [dependency-groups]
 dev = [
+    "langdetect>=1.0.9",
     "pytest>=8.3.0",
 ]
 
