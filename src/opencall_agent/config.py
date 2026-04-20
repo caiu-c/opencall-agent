@@ -24,8 +24,8 @@ class Settings(BaseSettings):
     embed_model: str = "ollama/nomic-embed-text"
 
     llm_temperature: float = Field(default=0.0, ge=0.0, le=2.0)
-    retrieval_top_k: int = Field(default=5, ge=1, le=50)
-    retrieval_score_threshold: float = Field(default=0.5, ge=0.0, le=1.0)
+    retrieval_top_k: int = Field(default=3, ge=1, le=50)
+    retrieval_score_threshold: float = Field(default=0.72, ge=0.0, le=1.0)
 
 
 def get_settings() -> Settings:

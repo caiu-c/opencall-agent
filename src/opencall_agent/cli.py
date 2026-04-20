@@ -6,6 +6,7 @@ from pathlib import Path
 
 import typer
 
+from .agent import answer as rag_answer
 from .config import get_settings
 from .ingestion.indexer import ingest_document
 from .vector import make_client
@@ -63,6 +64,32 @@ def ingest(
     typer.echo(
         f"Ingested {n} chunk(s) from {path} (category={category}, collection={collection})"
     )
+
+
+@app.command()
+def ask(
+    question: str = typer.Argument(..., help="Pergunta em PT-BR."),
+    collection: str = typer.Option(
+        DEFAULT_COLLECTION,
+        "--collection",
+        help="Qdrant collection to query.",
+    ),
+) -> None:
+    """Ask a question against the knowledge base."""
+    settings = get_settings()
+    client = make_client(settings)
+    resp = rag_answer(settings, client, question, collection)
+
+    typer.echo(resp.answer)
+    typer.echo("")
+    if resp.refused:
+        typer.echo("(sem fontes — pergunta fora da base de conhecimento)")
+        return
+    typer.echo("Fontes:")
+    for i, src in enumerate(resp.sources, start=1):
+        typer.echo(
+            f"  [{i}] {src.source} (score={src.score:.3f}, category={src.category})"
+        )
 
 
 @app.command("ingest-dir")
