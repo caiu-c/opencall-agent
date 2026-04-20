@@ -1,0 +1,37 @@
+POLÍTICA — RECALL DE MEDICAMENTOS
+
+Base normativa: RDC ANVISA 55/2005, CDC (Lei 8.078/1990) art. 10 e §§.
+
+O recall (recolhimento) é iniciado pelo detentor do registro sanitário
+(laboratório fabricante ou importador) quando identifica risco à saúde
+relacionado a lote específico, a toda a apresentação ou a todo o medicamento.
+Comunicação obrigatória à ANVISA em até 72 horas após a decisão de
+recolhimento, acompanhada de plano de ação.
+
+Classificação por risco:
+- Classe I — risco grave de dano à saúde. Recolhimento total, incluindo o
+  consumidor final. Divulgação em mídia de massa.
+- Classe II — risco temporário ou médico-reversível. Recolhimento até o
+  ponto de dispensação, com ou sem alcance ao consumidor final.
+- Classe III — sem risco sanitário relevante. Recolhimento limitado a
+  distribuição, sem convocação de consumidores.
+
+Procedimento interno da rede OpenCall:
+
+1. Recepção do comunicado oficial: pela ANVISA, pelo detentor do registro ou
+   pelo distribuidor autorizado.
+2. Bloqueio imediato do lote no sistema comercial (impede venda).
+3. Segregação física do estoque remanescente em local identificado, com
+   etiqueta "PRODUTO EM RECOLHIMENTO — NÃO DISPENSAR".
+4. Notificação proativa ao consumidor, quando possível identificá-lo pelo
+   cadastro/CPF.
+5. Recebimento da devolução de consumidores: não exige nota fiscal em caso
+   de recall. Ressarcimento integral na mesma forma de pagamento ou troca
+   por outro lote, a critério do consumidor.
+6. Registro de rastreabilidade (quantidade devolvida, segregada e destino
+   final), envio das evidências ao detentor do registro.
+7. Notificação voluntária ao VigiMed se houver relato de evento adverso.
+
+Prazos: ressarcimento em até 30 dias corridos conforme CDC art. 18, §1º.
+Descumprimento pelo fabricante pode implicar interdição do produto pela
+ANVISA e responsabilização no âmbito do CDC (art. 10, §1º).

@@ -1,0 +1,21 @@
+TRANSCRIÇÃO — LIGAÇÃO 0003 — RECEITA CONTROLADA VENCIDA
+
+Atendente: OpenCall Farmácia, Bianca. Pois não?
+Cliente: Olá. Tenho uma receita azul de clonazepam que meu psiquiatra passou
+mês passado e esqueci de comprar. Ainda é válida?
+Atendente: A receita de medicamentos da lista B1, que é onde o clonazepam está,
+tem validade de 30 dias a contar da data de emissão, conforme a Portaria 344
+de 1998 da ANVISA. Qual é a data na receita?
+Cliente: Dia 10 do mês passado.
+Atendente: Hoje é dia 15 deste mês — infelizmente já passou dos 30 dias, então
+a receita perdeu a validade. Vai ser necessária uma nova notificação.
+Cliente: Preciso ir no médico de novo? Ele mora longe.
+Atendente: Muitos psiquiatras emitem receita digital com assinatura ICP-Brasil,
+que é aceita pela RDC 471/2021 da ANVISA para controlados das listas C1, C2,
+C4 e C5 — para B1 a emissão ainda precisa ser no talonário azul fornecido pela
+vigilância sanitária local. Recomendo ligar no consultório e perguntar.
+Cliente: Entendi. E a receita vale no estado inteiro?
+Atendente: A notificação B só é válida no estado em que foi emitida. Se for
+viajar, leve a notificação junto ou peça orientação ao seu médico.
+Cliente: Perfeito, muito obrigada.
+Atendente: À disposição.

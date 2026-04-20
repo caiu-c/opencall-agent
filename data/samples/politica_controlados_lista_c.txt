@@ -1,0 +1,37 @@
+POLÍTICA — DISPENSAÇÃO DE MEDICAMENTOS LISTA C (CONTROLE ESPECIAL — RECEITA BRANCA)
+
+Base normativa: Portaria SVS/MS 344/1998, RDC ANVISA 27/2007.
+
+Lista C engloba substâncias sujeitas a controle especial que não se enquadram
+nas listas A e B. A dispensação requer Receita de Controle Especial em duas
+vias, impressa em papel branco.
+
+Subdivisões relevantes:
+- C1 — outras substâncias (exemplo: antidepressivos, antiepilépticos,
+  antipsicóticos como amitriptilina, fluoxetina, carbamazepina,
+  olanzapina). Validade 30 dias; dispensação até 60 dias de tratamento por
+  receita, em todo o território nacional.
+- C2 — retinoides sistêmicos (exemplo: isotretinoína). Exige Termo de
+  Consentimento e, no caso de mulheres em idade fértil, Termo de Conhecimento
+  de Risco anexo.
+- C3 — imunossupressores (talidomida) — regime específico com cadastro do
+  paciente.
+- C4 — antirretrovirais — fluxo diferenciado quando dispensados em farmácia
+  comercial.
+- C5 — anabolizantes — receita especial com prescritor identificado.
+
+Procedimento:
+1. Receita em 2 vias, válida 30 dias, sem restrição de estado (exceto para
+   C2/C3 conforme termo).
+2. 2ª via retida fisicamente ou arquivada eletronicamente em caso de receita
+   digital.
+3. Escrituração no SNGPC em até 7 dias.
+4. Arquivamento pelo prazo de 2 anos.
+
+Receita digital é aceita para C1, C2, C4 e C5 desde a RDC 471/2021, desde que
+assinada com certificado ICP-Brasil (assinatura qualificada), conforme a Lei
+14.063/2020. A validação é feita via QR Code ou hash. A farmácia registra o
+identificador da receita para impedir reuso.
+
+O farmacêutico orienta interações, aderência e armazenamento. Dispensa-se
+sempre com cuidado adicional em pacientes polimedicados.

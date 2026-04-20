@@ -1,0 +1,22 @@
+TRANSCRIÇÃO — LIGAÇÃO 0006 — RECEITA DIGITAL
+
+Atendente: OpenCall Farmácia, Henrique falando.
+Cliente: Oi Henrique, meu médico mandou a receita por WhatsApp em PDF. Aí eu
+fui na farmácia e a atendente não aceitou. Isso tá certo?
+Atendente: Precisamos olhar com calma. Uma receita digital só vale se atender
+à Lei 14.063/2020, que regula assinaturas eletrônicas. Para medicamentos
+comuns, basta uma assinatura eletrônica avançada com certificado válido. Para
+controlados, exige assinatura qualificada com certificado ICP-Brasil.
+Cliente: Ele é médico mesmo, tá no CRM.
+Atendente: Sem dúvida. Mas o que a farmácia precisa é verificar eletronicamente
+a assinatura — tem um código de validação, geralmente um QR Code ou um link
+na receita, que confirma a autenticidade junto ao CRM ou à plataforma. Se a
+receita for só um PDF escaneado ou uma foto sem esse código, a gente não
+consegue validar e a RDC 471/2021 não autoriza a dispensação.
+Cliente: Tem QR Code na parte de cima sim.
+Atendente: Ótimo. Peça para a atendente escanear o QR Code — ele abre a
+página do emissor confirmando a assinatura e a validade. Se o medicamento for
+tarjado, a farmácia registra o código para impedir reuso da receita.
+Cliente: Entendi. Vou lá agora com essa explicação.
+Atendente: Se tiver dificuldade, pode pedir para ligar para o nosso SAC,
+resolvemos na hora. Boa tarde.

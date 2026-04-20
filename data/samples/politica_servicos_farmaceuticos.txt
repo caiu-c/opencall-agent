@@ -1,0 +1,45 @@
+POLÍTICA — SERVIÇOS FARMACÊUTICOS
+
+Base normativa: Resolução CFF 585/2013 (atribuições clínicas), Resolução
+CFF 586/2013 (prescrição farmacêutica), Lei 13.021/2014 (farmácia como
+estabelecimento de saúde).
+
+A farmácia, pela Lei 13.021/2014, é estabelecimento de saúde e deve manter
+farmacêutico responsável técnico presente em tempo integral do funcionamento.
+Os serviços farmacêuticos oferecidos na OpenCall abrangem atividades
+clínicas regulamentadas pelo Conselho Federal de Farmácia.
+
+Serviços clínicos previstos (CFF 585/2013):
+
+- Anamnese farmacêutica: entrevista clínica estruturada, com registro em
+  prontuário farmacêutico.
+- Revisão da farmacoterapia: identificação de duplicidades, interações,
+  contraindicações e problemas de adesão.
+- Acompanhamento farmacoterapêutico (método Dáder ou equivalente): seguimento
+  longitudinal com metas clínicas pactuadas com o paciente.
+- Conciliação medicamentosa: comparação entre lista atual, prescrita e usada.
+- Educação em saúde: orientação individual ou em grupo sobre uso racional de
+  medicamentos, alergias, armazenamento, descarte.
+- Aferição de parâmetros fisiológicos: pressão arterial, glicemia capilar,
+  temperatura, saturação — com registro e orientação.
+- Administração de medicamentos: aplicação de injetáveis, vacinas (conforme
+  habilitação municipal) e colírios, em sala adequada.
+
+Prescrição farmacêutica (CFF 586/2013):
+
+- MIPs podem ser prescritos autonomamente pelo farmacêutico após avaliação.
+- Medicamentos tarjados só podem ser prescritos pelo farmacêutico em
+  protocolos institucionais pactuados com serviços de saúde (pouco aplicável
+  à farmácia comercial).
+- Todo ato de prescrição é registrado em Declaração de Serviço Farmacêutico
+  assinada, com carimbo e CRF.
+
+Consentimento: todos os serviços clínicos requerem consentimento informado e
+assinado. Em menores de idade, consentimento do responsável legal.
+
+Confidencialidade: o prontuário farmacêutico é sigiloso, acessível apenas ao
+próprio paciente, farmacêuticos envolvidos e autoridades sanitárias. Acesso
+segue a LGPD (art. 11) e o Código de Ética da Profissão Farmacêutica (Resolução
+CFF 596/2014).
+
+Documentação arquivada por no mínimo 5 anos.

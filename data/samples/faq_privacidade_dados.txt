@@ -1,0 +1,46 @@
+PERGUNTAS FREQUENTES — PRIVACIDADE E DADOS PESSOAIS
+
+Por que a farmácia pede meu CPF?
+O CPF é usado para identificação na dispensação, escrituração no SNGPC
+(para controlados e antimicrobianos), emissão de nota fiscal e eventualmente
+no programa Farmácia Popular. O fornecimento de CPF em compras comuns é
+facultativo (salvo controlados e Farmácia Popular).
+
+Meus dados de compra podem ser vendidos a terceiros?
+Não. A LGPD (Lei 13.709/2018) proíbe o compartilhamento de dados de saúde
+com terceiros para finalidade econômica, salvo exceções legais (prestação
+de serviços de saúde, portabilidade pelo titular). Dados sensíveis têm
+proteção reforçada.
+
+A farmácia compartilha meu histórico com o meu plano de saúde?
+Só com seu consentimento expresso e específico, ou nas hipóteses legais
+previstas (tutela da saúde, cumprimento de obrigação legal). Convênios
+rotineiros com farmácias para desconto exigem adesão do beneficiário.
+
+Posso pedir uma cópia dos meus dados?
+Sim. Pela LGPD (art. 18), você tem direito de confirmação, acesso,
+correção, portabilidade e eliminação. Basta contatar o Encarregado de
+Dados (DPO) da farmácia — o canal fica em nosso site.
+
+Posso apagar meus dados?
+Sim, com ressalvas: dados vinculados a receitas retidas e escrituração
+obrigatória (SNGPC, notas fiscais) têm prazos legais de guarda (2 a 5 anos)
+que prevalecem sobre a eliminação.
+
+A farmácia tem programa de fidelidade. É obrigatório participar?
+Não. O programa exige consentimento específico e destacado. Você pode
+revogar a qualquer tempo, sem prejuízo ao atendimento normal.
+
+Recebi SMS promocional sem autorização. E agora?
+Registre reclamação por escrito à farmácia (por e-mail ou no SAC). Se não
+houver resposta em prazo razoável, você pode acionar a ANPD (Autoridade
+Nacional de Proteção de Dados) ou o PROCON.
+
+Em caso de vazamento de dados, o que a farmácia faz?
+Pelo art. 48 da LGPD, a farmácia comunica o incidente à ANPD e aos titulares
+afetados em prazo razoável, informando natureza dos dados, medidas adotadas
+e recomendações de proteção.
+
+A farmácia grava as ligações?
+Pode gravar para finalidades legítimas (qualidade, segurança), com aviso
+prévio ao cliente. O armazenamento obedece a prazo estritamente necessário.
