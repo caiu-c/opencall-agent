@@ -1,0 +1,1110 @@
+{
+  "summary": {
+    "n": 30,
+    "retrieval_recall_mean": 0.2833333333333333,
+    "must_contain_coverage_mean": 0.5222222222222223,
+    "latency_p50_s": 10.191406771002221,
+    "latency_p95_s": 15.858099302000483,
+    "refusal_false_negatives": 0,
+    "by_category": {
+      "faq": {
+        "n": 6,
+        "retrieval_recall_mean": 0.5,
+        "must_contain_coverage_mean": 0.7777777777777778
+      },
+      "politica": {
+        "n": 13,
+        "retrieval_recall_mean": 0.11538461538461539,
+        "must_contain_coverage_mean": 0.41025641025641024
+      },
+      "produto": {
+        "n": 2,
+        "retrieval_recall_mean": 0.75,
+        "must_contain_coverage_mean": 0.8333333333333333
+      },
+      "regulatorio": {
+        "n": 5,
+        "retrieval_recall_mean": 0.1,
+        "must_contain_coverage_mean": 0.3333333333333333
+      },
+      "transcricao": {
+        "n": 4,
+        "retrieval_recall_mean": 0.5,
+        "must_contain_coverage_mean": 0.5833333333333334
+      }
+    }
+  },
+  "rows": [
+    {
+      "id": "q01",
+      "category": "politica",
+      "question": "Qual a validade da receita de antibiótico no Brasil?",
+      "answer": "A validade da receita de antibiótico no Brasil é de dez dias corridos a contar da data de emissão, conforme estabelecido pela RDC 20/2011 da ANVISA [1].",
+      "sources": [
+        {
+          "source": "data/samples/faq_antibioticos.txt",
+          "score": 0.84474856
+        },
+        {
+          "source": "data/samples/faq_farmacia_popular.txt",
+          "score": 0.7906386
+        },
+        {
+          "source": "data/samples/faq_medicamentos_controlados.txt",
+          "score": 0.77592164
+        }
+      ],
+      "refused": false,
+      "retrieval_scores": [
+        0.84474856,
+        0.7906386,
+        0.77592164
+      ],
+      "latency_s": 8.2380918380004,
+      "metrics": {
+        "id": "q01",
+        "category": "politica",
+        "refused_expected": false,
+        "refused_actual": false,
+        "retrieval_recall": 0.0,
+        "must_contain_coverage": 0.5,
+        "latency_s": 8.2380918380004,
+        "answer": "A validade da receita de antibiótico no Brasil é de dez dias corridos a contar da data de emissão, conforme estabelecido pela RDC 20/2011 da ANVISA [1]."
+      }
+    },
+    {
+      "id": "q02",
+      "category": "faq",
+      "question": "Posso devolver um medicamento comprado na loja física se mudar de ideia?",
+      "answer": "[1] Para compras presenciais na loja, não é possível devolver medicamentos após a saída do estabelecimento devido à regra da RDC 44/2009 da ANVISA. As exceções são recall oficial do lote, desvio de qualidade comprovado ou erro de dispensação da farmácia.\n\nSe você comprou pelo site ou telefone, tem direito ao arrependimento conforme o artigo 49 do Código de Defesa do Consumidor, desde que seja dentro dos 7 dias corridos. No caso de compras presenciais, aconselhamos que consulte o farmacêutico responsável para verificar se há alguma exceção aplicável.\n\n[3] Caso tenha recebido um produto com embalagem violada ou erro na dispensação, pode trocar o produto retornando à loja com o medicamento e a nota fiscal.",
+      "sources": [
+        {
+          "source": "data/samples/faq_trocas_devolucoes.txt",
+          "score": 0.88652676
+        },
+        {
+          "source": "data/samples/politica_rotulagem_bula.txt",
+          "score": 0.79231197
+        },
+        {
+          "source": "data/samples/faq_trocas_devolucoes.txt",
+          "score": 0.7774089
+        }
+      ],
+      "refused": false,
+      "retrieval_scores": [
+        0.88652676,
+        0.79231197,
+        0.7774089
+      ],
+      "latency_s": 15.858099302000483,
+      "metrics": {
+        "id": "q02",
+        "category": "faq",
+        "refused_expected": false,
+        "refused_actual": false,
+        "retrieval_recall": 0.5,
+        "must_contain_coverage": 1.0,
+        "latency_s": 15.858099302000483,
+        "answer": "[1] Para compras presenciais na loja, não é possível devolver medicamentos após a saída do estabelecimento devido à regra da RDC 44/2009 da ANVISA. As exceções são recall oficial do lote, desvio de qualidade comprovado ou erro de dispensação da farmácia.\n\nSe você comprou pelo site ou telefone, tem direito ao arrependimento conforme o artigo 49 do Código de Defesa do Consumidor, desde que seja dentro dos 7 dias corridos. No caso de compras presenciais, aconselhamos que consulte o farmacêutico responsável para verificar se há alguma exceção aplicável.\n\n[3] Caso tenha recebido um produto com embalagem violada ou erro na dispensação, pode trocar o produto retornando à loja com o medicamento e a nota fiscal."
+      }
+    },
+    {
+      "id": "q03",
+      "category": "politica",
+      "question": "Qual notificação de receita é exigida para clonazepam?",
+      "answer": "[2] Para clonazepam, que é um medicamento da lista B e possui uma receita azul, a notificação de receita é exigida para cada nova compra. Como a sua receita venceu há mais de 30 dias, será necessário obter uma nova prescrição do seu médico psiquiatra.\n\nSeu médico pode emitir uma nova receita azul conforme as normas estabelecidas pela Portaria SVS/MS 344/1998.",
+      "sources": [
+        {
+          "source": "data/samples/transcricao_receita_controlada_vencida.txt",
+          "score": 0.78951454
+        },
+        {
+          "source": "data/samples/faq_medicamentos_controlados.txt",
+          "score": 0.74162066
+        },
+        {
+          "source": "data/samples/politica_farmacia_popular.txt",
+          "score": 0.7267171
+        }
+      ],
+      "refused": false,
+      "retrieval_scores": [
+        0.78951454,
+        0.74162066,
+        0.7267171
+      ],
+      "latency_s": 11.896403507998912,
+      "metrics": {
+        "id": "q03",
+        "category": "politica",
+        "refused_expected": false,
+        "refused_actual": false,
+        "retrieval_recall": 0.0,
+        "must_contain_coverage": 0.6666666666666666,
+        "latency_s": 11.896403507998912,
+        "answer": "[2] Para clonazepam, que é um medicamento da lista B e possui uma receita azul, a notificação de receita é exigida para cada nova compra. Como a sua receita venceu há mais de 30 dias, será necessário obter uma nova prescrição do seu médico psiquiatra.\n\nSeu médico pode emitir uma nova receita azul conforme as normas estabelecidas pela Portaria SVS/MS 344/1998."
+      }
+    },
+    {
+      "id": "q04",
+      "category": "politica",
+      "question": "O que é intercambialidade de medicamentos?",
+      "answer": "A informação sobre intercambialidade de medicamentos não está presente nos trechos fornecidos [1] a [3]. Sugiro que o cliente consulte o farmacêutico responsável para obter informações detalhadas sobre este assunto.",
+      "sources": [
+        {
+          "source": "data/samples/politica_servicos_farmaceuticos.txt",
+          "score": 0.73411036
+        },
+        {
+          "source": "data/samples/politica_antimicrobianos.txt",
+          "score": 0.72340053
+        },
+        {
+          "source": "data/samples/faq_medicamentos_controlados.txt",
+          "score": 0.718628
+        }
+      ],
+      "refused": false,
+      "retrieval_scores": [
+        0.73411036,
+        0.72340053,
+        0.718628
+      ],
+      "latency_s": 8.603468905002956,
+      "metrics": {
+        "id": "q04",
+        "category": "politica",
+        "refused_expected": false,
+        "refused_actual": false,
+        "retrieval_recall": 0.0,
+        "must_contain_coverage": 0.5,
+        "latency_s": 8.603468905002956,
+        "answer": "A informação sobre intercambialidade de medicamentos não está presente nos trechos fornecidos [1] a [3]. Sugiro que o cliente consulte o farmacêutico responsável para obter informações detalhadas sobre este assunto."
+      }
+    },
+    {
+      "id": "q05",
+      "category": "faq",
+      "question": "Sou beneficiário do Bolsa Família, tenho gratuidade em quais medicamentos pelo Farmácia Popular?",
+      "answer": "[2] Segundo as informações fornecidas, beneficiários do Bolsa Família têm gratuidade em todo o elenco de medicamentos oferecidos pelo programa Farmácia Popular desde 2023. Isso inclui medicamentos para hipertensão, diabetes e asma.\n\nSe você ou seu marido estiverem tomando algum desses medicamentos, eles devem ser gratuitos conforme o programa. No entanto, é sempre recomendável consultar o farmacêutico responsável na sua drogaria credenciada para confirmar a gratuidade do medicamento específico que está sendo utilizado.\n\n[3]",
+      "sources": [
+        {
+          "source": "data/samples/faq_generico.txt",
+          "score": 0.81874394
+        },
+        {
+          "source": "data/samples/faq_farmacia_popular.txt",
+          "score": 0.8033324
+        },
+        {
+          "source": "data/samples/transcricao_farmacia_popular.txt",
+          "score": 0.7906456
+        }
+      ],
+      "refused": false,
+      "retrieval_scores": [
+        0.81874394,
+        0.8033324,
+        0.7906456
+      ],
+      "latency_s": 12.490230868999788,
+      "metrics": {
+        "id": "q05",
+        "category": "faq",
+        "refused_expected": false,
+        "refused_actual": false,
+        "retrieval_recall": 0.5,
+        "must_contain_coverage": 1.0,
+        "latency_s": 12.490230868999788,
+        "answer": "[2] Segundo as informações fornecidas, beneficiários do Bolsa Família têm gratuidade em todo o elenco de medicamentos oferecidos pelo programa Farmácia Popular desde 2023. Isso inclui medicamentos para hipertensão, diabetes e asma.\n\nSe você ou seu marido estiverem tomando algum desses medicamentos, eles devem ser gratuitos conforme o programa. No entanto, é sempre recomendável consultar o farmacêutico responsável na sua drogaria credenciada para confirmar a gratuidade do medicamento específico que está sendo utilizado.\n\n[3]"
+      }
+    },
+    {
+      "id": "q06",
+      "category": "faq",
+      "question": "Onde descartar medicamentos vencidos?",
+      "answer": "Os medicamentos vencidos devem ser descartados em coletores de logística reversa disponíveis em drogarias e farmácias credenciadas, conforme o Decreto 10.388/2020. Todas as unidades da OpenCall em cidades com mais de 500 mil habitantes têm coletor para esse fim [1].\n\nNão é recomendável jogar medicamentos no lixo comum ou no vaso sanitário, pois isso pode contaminar o solo e a água [1].\n\nOs itens que podem ser descartados no coletor incluem comprimidos, cápsulas, líquidos (xaropes, suspensões, colírios), cremes, pomadas, pós, bisnagas e suas embalagens primárias vazias. Medicamentos controlados também são aceitos [1].\n\nSe você precisar descartar medicamento de outra pessoa, como um familiar falecido, pode fazer isso no coletor [2].",
+      "sources": [
+        {
+          "source": "data/samples/faq_descarte.txt",
+          "score": 0.813851
+        },
+        {
+          "source": "data/samples/faq_descarte.txt",
+          "score": 0.7650565
+        },
+        {
+          "source": "data/samples/politica_descarte_reversa.txt",
+          "score": 0.761946
+        }
+      ],
+      "refused": false,
+      "retrieval_scores": [
+        0.813851,
+        0.7650565,
+        0.761946
+      ],
+      "latency_s": 16.786836027997197,
+      "metrics": {
+        "id": "q06",
+        "category": "faq",
+        "refused_expected": false,
+        "refused_actual": false,
+        "retrieval_recall": 1.0,
+        "must_contain_coverage": 1.0,
+        "latency_s": 16.786836027997197,
+        "answer": "Os medicamentos vencidos devem ser descartados em coletores de logística reversa disponíveis em drogarias e farmácias credenciadas, conforme o Decreto 10.388/2020. Todas as unidades da OpenCall em cidades com mais de 500 mil habitantes têm coletor para esse fim [1].\n\nNão é recomendável jogar medicamentos no lixo comum ou no vaso sanitário, pois isso pode contaminar o solo e a água [1].\n\nOs itens que podem ser descartados no coletor incluem comprimidos, cápsulas, líquidos (xaropes, suspensões, colírios), cremes, pomadas, pós, bisnagas e suas embalagens primárias vazias. Medicamentos controlados também são aceitos [1].\n\nSe você precisar descartar medicamento de outra pessoa, como um familiar falecido, pode fazer isso no coletor [2]."
+      }
+    },
+    {
+      "id": "q07",
+      "category": "faq",
+      "question": "Recebi receita digital por PDF escaneado. A farmácia pode dispensar?",
+      "answer": "A farmácia OpenCall pode dispensar medicamentos com receita digital válida, desde que ela seja assinada eletronicamente com certificado válido e não apenas um scan ou foto. Segundo o contexto fornecido [3], os antimicrobianos podem ser dispensados com receita digital assinada avançada ou qualificada.\n\nSe a receita digital que você recebeu for válida, a farmácia pode proceder à dispensação. No entanto, se houver dúvidas sobre a validade da receita, é recomendável consultar o farmacêutico responsável para garantir que todos os requisitos estejam cumpridos.\n\n[3]",
+      "sources": [
+        {
+          "source": "data/samples/faq_delivery.txt",
+          "score": 0.7455139
+        },
+        {
+          "source": "data/samples/faq_delivery.txt",
+          "score": 0.723011
+        },
+        {
+          "source": "data/samples/faq_receita_digital.txt",
+          "score": 0.72240496
+        }
+      ],
+      "refused": false,
+      "retrieval_scores": [
+        0.7455139,
+        0.723011,
+        0.72240496
+      ],
+      "latency_s": 13.914771023999492,
+      "metrics": {
+        "id": "q07",
+        "category": "faq",
+        "refused_expected": false,
+        "refused_actual": false,
+        "retrieval_recall": 0.5,
+        "must_contain_coverage": 0.0,
+        "latency_s": 13.914771023999492,
+        "answer": "A farmácia OpenCall pode dispensar medicamentos com receita digital válida, desde que ela seja assinada eletronicamente com certificado válido e não apenas um scan ou foto. Segundo o contexto fornecido [3], os antimicrobianos podem ser dispensados com receita digital assinada avançada ou qualificada.\n\nSe a receita digital que você recebeu for válida, a farmácia pode proceder à dispensação. No entanto, se houver dúvidas sobre a validade da receita, é recomendável consultar o farmacêutico responsável para garantir que todos os requisitos estejam cumpridos.\n\n[3]"
+      }
+    },
+    {
+      "id": "q08",
+      "category": "politica",
+      "question": "Qual a diferença entre recall Classe I e Classe II?",
+      "answer": "Não encontrei essa informação na base de conhecimento. Recomendo consultar o farmacêutico responsável.",
+      "sources": [],
+      "refused": true,
+      "retrieval_scores": [
+        0.6521557,
+        0.6205917,
+        0.6094066
+      ],
+      "latency_s": 3.987222018000466,
+      "metrics": {
+        "id": "q08",
+        "category": "politica",
+        "refused_expected": false,
+        "refused_actual": true,
+        "retrieval_recall": 0.0,
+        "must_contain_coverage": 0.0,
+        "latency_s": 3.987222018000466,
+        "answer": "Não encontrei essa informação na base de conhecimento. Recomendo consultar o farmacêutico responsável."
+      }
+    },
+    {
+      "id": "q09",
+      "category": "politica",
+      "question": "A farmácia pode vender dados do meu histórico de compra?",
+      "answer": "A farmácia não pode vender seus dados de compra a terceiros para finalidade econômica, conforme estabelece a LGPD (Lei 13.709/2018) [1]. Seu histórico de compra não é compartilhado com o seu plano de saúde sem seu consentimento expresso e específico [3].\n\nSe tiver mais dúvidas ou precisar acessar seus dados, pode contatar o Encarregado de Dados (DPO) da farmácia pelo canal disponível em seu site [3].",
+      "sources": [
+        {
+          "source": "data/samples/faq_privacidade_dados.txt",
+          "score": 0.7679831
+        },
+        {
+          "source": "data/samples/faq_trocas_devolucoes.txt",
+          "score": 0.75657237
+        },
+        {
+          "source": "data/samples/faq_privacidade_dados.txt",
+          "score": 0.7405251
+        }
+      ],
+      "refused": false,
+      "retrieval_scores": [
+        0.7679831,
+        0.75657237,
+        0.7405251
+      ],
+      "latency_s": 10.537897804999375,
+      "metrics": {
+        "id": "q09",
+        "category": "politica",
+        "refused_expected": false,
+        "refused_actual": false,
+        "retrieval_recall": 0.5,
+        "must_contain_coverage": 0.6666666666666666,
+        "latency_s": 10.537897804999375,
+        "answer": "A farmácia não pode vender seus dados de compra a terceiros para finalidade econômica, conforme estabelece a LGPD (Lei 13.709/2018) [1]. Seu histórico de compra não é compartilhado com o seu plano de saúde sem seu consentimento expresso e específico [3].\n\nSe tiver mais dúvidas ou precisar acessar seus dados, pode contatar o Encarregado de Dados (DPO) da farmácia pelo canal disponível em seu site [3]."
+      }
+    },
+    {
+      "id": "q10",
+      "category": "politica",
+      "question": "Qual a validade da notificação de receita amarela para morfina?",
+      "answer": "A informação sobre a validade da notificação de receita amarela para morfina não está presente nos trechos fornecidos [1] e [3]. Sugiro que o cliente consulte o farmacêutico responsável para obter informações precisas sobre este assunto.",
+      "sources": [
+        {
+          "source": "data/samples/faq_antibioticos.txt",
+          "score": 0.76562536
+        },
+        {
+          "source": "data/samples/faq_farmacia_popular.txt",
+          "score": 0.74316025
+        },
+        {
+          "source": "data/samples/politica_manipulacao.txt",
+          "score": 0.7396166
+        }
+      ],
+      "refused": false,
+      "retrieval_scores": [
+        0.76562536,
+        0.74316025,
+        0.7396166
+      ],
+      "latency_s": 8.807954015999712,
+      "metrics": {
+        "id": "q10",
+        "category": "politica",
+        "refused_expected": false,
+        "refused_actual": false,
+        "retrieval_recall": 0.0,
+        "must_contain_coverage": 0.0,
+        "latency_s": 8.807954015999712,
+        "answer": "A informação sobre a validade da notificação de receita amarela para morfina não está presente nos trechos fornecidos [1] e [3]. Sugiro que o cliente consulte o farmacêutico responsável para obter informações precisas sobre este assunto."
+      }
+    },
+    {
+      "id": "q11",
+      "category": "faq",
+      "question": "Sobrou antibiótico do tratamento. Posso devolver e pegar o dinheiro?",
+      "answer": "[3] Não é possível devolver o antibiótico sobrando e pedir reembolso, pois ele deve ser levado ao coletor de descarte. Não há restituição financeira nesse caso.",
+      "sources": [
+        {
+          "source": "data/samples/faq_trocas_devolucoes.txt",
+          "score": 0.7763152
+        },
+        {
+          "source": "data/samples/politica_privacidade_lgpd.txt",
+          "score": 0.7620525
+        },
+        {
+          "source": "data/samples/transcricao_recall_lote.txt",
+          "score": 0.76067066
+        }
+      ],
+      "refused": false,
+      "retrieval_scores": [
+        0.7763152,
+        0.7620525,
+        0.76067066
+      ],
+      "latency_s": 8.947127610997995,
+      "metrics": {
+        "id": "q11",
+        "category": "faq",
+        "refused_expected": false,
+        "refused_actual": false,
+        "retrieval_recall": 0.0,
+        "must_contain_coverage": 0.6666666666666666,
+        "latency_s": 8.947127610997995,
+        "answer": "[3] Não é possível devolver o antibiótico sobrando e pedir reembolso, pois ele deve ser levado ao coletor de descarte. Não há restituição financeira nesse caso."
+      }
+    },
+    {
+      "id": "q12",
+      "category": "politica",
+      "question": "Quais medicamentos o Farmácia Popular oferece gratuitamente para o público geral?",
+      "answer": "[1] De acordo com a Portaria GM/MS 3.193/2022, medicamentos para hipertensão, diabetes e asma são gratuitos para o público geral. Outros medicamentos como dislipidemia (sinvastatina), Parkinson, osteoporose, glaucoma, rinite, contraceptivos e fraldas geriátricas para pessoas com 60 anos ou mais entram no copagamento.\n\nPortanto, os medicamentos gratuitos para o público geral incluem aqueles usados para controlar hipertensão, diabetes e asma. Para verificar se outros medicamentos específicos estão inclusos nesse programa, é recomendável consultar o farmacêutico responsável na sua farmácia credenciada à Farmácia Popular.",
+      "sources": [
+        {
+          "source": "data/samples/faq_farmacia_popular.txt",
+          "score": 0.81969976
+        },
+        {
+          "source": "data/samples/faq_generico.txt",
+          "score": 0.77953726
+        },
+        {
+          "source": "data/samples/transcricao_farmacia_popular.txt",
+          "score": 0.77357495
+        }
+      ],
+      "refused": false,
+      "retrieval_scores": [
+        0.81969976,
+        0.77953726,
+        0.77357495
+      ],
+      "latency_s": 14.70685895799761,
+      "metrics": {
+        "id": "q12",
+        "category": "politica",
+        "refused_expected": false,
+        "refused_actual": false,
+        "retrieval_recall": 0.5,
+        "must_contain_coverage": 1.0,
+        "latency_s": 14.70685895799761,
+        "answer": "[1] De acordo com a Portaria GM/MS 3.193/2022, medicamentos para hipertensão, diabetes e asma são gratuitos para o público geral. Outros medicamentos como dislipidemia (sinvastatina), Parkinson, osteoporose, glaucoma, rinite, contraceptivos e fraldas geriátricas para pessoas com 60 anos ou mais entram no copagamento.\n\nPortanto, os medicamentos gratuitos para o público geral incluem aqueles usados para controlar hipertensão, diabetes e asma. Para verificar se outros medicamentos específicos estão inclusos nesse programa, é recomendável consultar o farmacêutico responsável na sua farmácia credenciada à Farmácia Popular."
+      }
+    },
+    {
+      "id": "q13",
+      "category": "regulatorio",
+      "question": "Em quanto tempo o laboratório precisa comunicar um recall à ANVISA?",
+      "answer": "[1] De acordo com as informações fornecidas, o laboratório detentor do registro comunicou à ANVISA dentro das 72 horas obrigatórias após identificar o recall da metformina. [3]\n\nSe a pergunta específica sobre o prazo para comunicação do laboratório à ANVISA não está presente no contexto fornecido, sugiro que o cliente consulte o farmacêutico responsável ou visite o site da ANVISA para obter informações mais detalhadas.",
+      "sources": [
+        {
+          "source": "data/samples/transcricao_recall_lote.txt",
+          "score": 0.77160525
+        },
+        {
+          "source": "data/samples/faq_recall.txt",
+          "score": 0.7644422
+        },
+        {
+          "source": "data/samples/faq_recall.txt",
+          "score": 0.75030744
+        }
+      ],
+      "refused": false,
+      "retrieval_scores": [
+        0.77160525,
+        0.7644422,
+        0.75030744
+      ],
+      "latency_s": 10.983970302997477,
+      "metrics": {
+        "id": "q13",
+        "category": "regulatorio",
+        "refused_expected": false,
+        "refused_actual": false,
+        "retrieval_recall": 0.0,
+        "must_contain_coverage": 0.5,
+        "latency_s": 10.983970302997477,
+        "answer": "[1] De acordo com as informações fornecidas, o laboratório detentor do registro comunicou à ANVISA dentro das 72 horas obrigatórias após identificar o recall da metformina. [3]\n\nSe a pergunta específica sobre o prazo para comunicação do laboratório à ANVISA não está presente no contexto fornecido, sugiro que o cliente consulte o farmacêutico responsável ou visite o site da ANVISA para obter informações mais detalhadas."
+      }
+    },
+    {
+      "id": "q14",
+      "category": "politica",
+      "question": "Quais são as obrigações da farmácia em relação à cadeia de frio?",
+      "answer": "Não encontrei essa informação na base de conhecimento. Recomendo consultar o farmacêutico responsável.",
+      "sources": [],
+      "refused": true,
+      "retrieval_scores": [
+        0.70027155,
+        0.6991747,
+        0.6953775
+      ],
+      "latency_s": 1.6870035660031135,
+      "metrics": {
+        "id": "q14",
+        "category": "politica",
+        "refused_expected": false,
+        "refused_actual": true,
+        "retrieval_recall": 0.0,
+        "must_contain_coverage": 0.0,
+        "latency_s": 1.6870035660031135,
+        "answer": "Não encontrei essa informação na base de conhecimento. Recomendo consultar o farmacêutico responsável."
+      }
+    },
+    {
+      "id": "q15",
+      "category": "regulatorio",
+      "question": "O que é o VigiMed?",
+      "answer": "Não encontrei essa informação na base de conhecimento. Recomendo consultar o farmacêutico responsável.",
+      "sources": [],
+      "refused": true,
+      "retrieval_scores": [
+        0.63262784,
+        0.6303127,
+        0.6118756
+      ],
+      "latency_s": 1.4506999189979979,
+      "metrics": {
+        "id": "q15",
+        "category": "regulatorio",
+        "refused_expected": false,
+        "refused_actual": true,
+        "retrieval_recall": 0.0,
+        "must_contain_coverage": 0.0,
+        "latency_s": 1.4506999189979979,
+        "answer": "Não encontrei essa informação na base de conhecimento. Recomendo consultar o farmacêutico responsável."
+      }
+    },
+    {
+      "id": "q16",
+      "category": "produto",
+      "question": "Qual a diferença entre medicamento genérico e similar?",
+      "answer": "[1] - A diferença entre medicamento genérico e similar é que:\n\n- O medicamento genérico tem o mesmo princípio ativo, dose e forma farmacêutica do medicamento de referência. Ele é aprovado pela ANVISA após comprovação de bioequivalência.\n\n- O medicamento similar também possui o mesmo princípio ativo, dose e forma farmacêutica do medicamento de referência, mas é comercializado sob nome fantasia. Desde a RDC 58/2014, similares intercambiáveis constam em lista publicada pela ANVISA.\n\n- A substituição por genérico ou similar na hora da dispensação é decidida pelo farmacêutico e deve ser registrada na receita [1].",
+      "sources": [
+        {
+          "source": "data/samples/politica_generico_intercambialidade.txt",
+          "score": 0.772851
+        },
+        {
+          "source": "data/samples/faq_generico.txt",
+          "score": 0.7708608
+        },
+        {
+          "source": "data/samples/transcricao_generico_vs_referencia.txt",
+          "score": 0.75584215
+        }
+      ],
+      "refused": false,
+      "retrieval_scores": [
+        0.772851,
+        0.7708608,
+        0.75584215
+      ],
+      "latency_s": 12.263559887996962,
+      "metrics": {
+        "id": "q16",
+        "category": "produto",
+        "refused_expected": false,
+        "refused_actual": false,
+        "retrieval_recall": 1.0,
+        "must_contain_coverage": 0.6666666666666666,
+        "latency_s": 12.263559887996962,
+        "answer": "[1] - A diferença entre medicamento genérico e similar é que:\n\n- O medicamento genérico tem o mesmo princípio ativo, dose e forma farmacêutica do medicamento de referência. Ele é aprovado pela ANVISA após comprovação de bioequivalência.\n\n- O medicamento similar também possui o mesmo princípio ativo, dose e forma farmacêutica do medicamento de referência, mas é comercializado sob nome fantasia. Desde a RDC 58/2014, similares intercambiáveis constam em lista publicada pela ANVISA.\n\n- A substituição por genérico ou similar na hora da dispensação é decidida pelo farmacêutico e deve ser registrada na receita [1]."
+      }
+    },
+    {
+      "id": "q17",
+      "category": "politica",
+      "question": "Receita digital de clonazepam (controlado B1) é aceita?",
+      "answer": "A receita digital de clonazepam (controlado B1) não é aceita após vencer o prazo de 30 dias a contar da data de emissão, conforme estabelecido pela Portaria SVS/MS 344/1998 [2] e reforçado na Política — Dispensação de Medicamentos Lista B (PSICOTRÓPICOS — RECEITA AZUL) [3]. Como a receita foi emitida há mais de 30 dias, será necessário obter uma nova notificação médica.",
+      "sources": [
+        {
+          "source": "data/samples/transcricao_receita_controlada_vencida.txt",
+          "score": 0.73417306
+        },
+        {
+          "source": "data/samples/faq_medicamentos_controlados.txt",
+          "score": 0.72026193
+        },
+        {
+          "source": "data/samples/politica_controlados_lista_b.txt",
+          "score": 0.6963587
+        }
+      ],
+      "refused": false,
+      "retrieval_scores": [
+        0.73417306,
+        0.72026193,
+        0.6963587
+      ],
+      "latency_s": 11.771883519999392,
+      "metrics": {
+        "id": "q17",
+        "category": "politica",
+        "refused_expected": false,
+        "refused_actual": false,
+        "retrieval_recall": 0.5,
+        "must_contain_coverage": 1.0,
+        "latency_s": 11.771883519999392,
+        "answer": "A receita digital de clonazepam (controlado B1) não é aceita após vencer o prazo de 30 dias a contar da data de emissão, conforme estabelecido pela Portaria SVS/MS 344/1998 [2] e reforçado na Política — Dispensação de Medicamentos Lista B (PSICOTRÓPICOS — RECEITA AZUL) [3]. Como a receita foi emitida há mais de 30 dias, será necessário obter uma nova notificação médica."
+      }
+    },
+    {
+      "id": "q18",
+      "category": "politica",
+      "question": "Por quanto tempo a farmácia arquiva as receitas de medicamentos controlados?",
+      "answer": "A informação sobre o prazo de arquivamento das receitas de medicamentos controlados não está presente nos trechos fornecidos [1], [2] e [3]. Sugiro que você consulte o farmacêutico responsável para obter essa informação.",
+      "sources": [
+        {
+          "source": "data/samples/faq_medicamentos_controlados.txt",
+          "score": 0.77222586
+        },
+        {
+          "source": "data/samples/transcricao_descarte_vencido.txt",
+          "score": 0.74172807
+        },
+        {
+          "source": "data/samples/politica_antimicrobianos.txt",
+          "score": 0.7371607
+        }
+      ],
+      "refused": false,
+      "retrieval_scores": [
+        0.77222586,
+        0.74172807,
+        0.7371607
+      ],
+      "latency_s": 8.648151256998972,
+      "metrics": {
+        "id": "q18",
+        "category": "politica",
+        "refused_expected": false,
+        "refused_actual": false,
+        "retrieval_recall": 0.0,
+        "must_contain_coverage": 0.0,
+        "latency_s": 8.648151256998972,
+        "answer": "A informação sobre o prazo de arquivamento das receitas de medicamentos controlados não está presente nos trechos fornecidos [1], [2] e [3]. Sugiro que você consulte o farmacêutico responsável para obter essa informação."
+      }
+    },
+    {
+      "id": "q19",
+      "category": "politica",
+      "question": "Cliente comprou e pagou duas vezes no cartão. O que o CDC prevê?",
+      "answer": "A informação não está presente nos trechos fornecidos sobre as regras do CDC (Conselho de Desenvolvimento Econômico e Social) em relação a compras duplicadas. Sugiro que o cliente consulte o farmacêutico responsável para obter informações específicas sobre esse caso.\n\n[1] [3]",
+      "sources": [
+        {
+          "source": "data/samples/transcricao_devolucao_antibiotico.txt",
+          "score": 0.7241148
+        },
+        {
+          "source": "data/samples/transcricao_devolucao_antibiotico.txt",
+          "score": 0.70734084
+        },
+        {
+          "source": "data/samples/transcricao_troca_medicamento.txt",
+          "score": 0.7023423
+        }
+      ],
+      "refused": false,
+      "retrieval_scores": [
+        0.7241148,
+        0.70734084,
+        0.7023423
+      ],
+      "latency_s": 8.785483820000081,
+      "metrics": {
+        "id": "q19",
+        "category": "politica",
+        "refused_expected": false,
+        "refused_actual": false,
+        "retrieval_recall": 0.0,
+        "must_contain_coverage": 0.0,
+        "latency_s": 8.785483820000081,
+        "answer": "A informação não está presente nos trechos fornecidos sobre as regras do CDC (Conselho de Desenvolvimento Econômico e Social) em relação a compras duplicadas. Sugiro que o cliente consulte o farmacêutico responsável para obter informações específicas sobre esse caso.\n\n[1] [3]"
+      }
+    },
+    {
+      "id": "q20",
+      "category": "regulatorio",
+      "question": "O que é escrituração no SNGPC e qual o prazo?",
+      "answer": "A informação sobre escrituração no SNGPC e seu prazo não está presente nos trechos fornecidos [1] a [3]. Sugiro que você consulte o farmacêutico responsável para obter essas informações.",
+      "sources": [
+        {
+          "source": "data/samples/faq_privacidade_dados.txt",
+          "score": 0.7305999
+        },
+        {
+          "source": "data/samples/faq_trocas_devolucoes.txt",
+          "score": 0.6870264
+        },
+        {
+          "source": "data/samples/transcricao_recall_lote.txt",
+          "score": 0.6841431
+        }
+      ],
+      "refused": false,
+      "retrieval_scores": [
+        0.7305999,
+        0.6870264,
+        0.6841431
+      ],
+      "latency_s": 8.002464711997163,
+      "metrics": {
+        "id": "q20",
+        "category": "regulatorio",
+        "refused_expected": false,
+        "refused_actual": false,
+        "retrieval_recall": 0.0,
+        "must_contain_coverage": 0.5,
+        "latency_s": 8.002464711997163,
+        "answer": "A informação sobre escrituração no SNGPC e seu prazo não está presente nos trechos fornecidos [1] a [3]. Sugiro que você consulte o farmacêutico responsável para obter essas informações."
+      }
+    },
+    {
+      "id": "q21",
+      "category": "politica",
+      "question": "Posso comprar medicamento manipulado sem receita?",
+      "answer": "[3] Segundo a legislação brasileira, medicamentos manipulados geralmente precisam ser prescritos por um profissional de saúde. No entanto, a pergunta específica sobre a possibilidade de compra sem receita não está claramente respondida no contexto fornecido.\n\nA recomendação é consultar o farmacêutico responsável para obter informações mais detalhadas e precisas sobre os medicamentos manipulados disponíveis na OpenCall.",
+      "sources": [
+        {
+          "source": "data/samples/faq_delivery.txt",
+          "score": 0.7649673
+        },
+        {
+          "source": "data/samples/faq_trocas_devolucoes.txt",
+          "score": 0.764419
+        },
+        {
+          "source": "data/samples/faq_trocas_devolucoes.txt",
+          "score": 0.7568929
+        }
+      ],
+      "refused": false,
+      "retrieval_scores": [
+        0.7649673,
+        0.764419,
+        0.7568929
+      ],
+      "latency_s": 10.191406771002221,
+      "metrics": {
+        "id": "q21",
+        "category": "politica",
+        "refused_expected": false,
+        "refused_actual": false,
+        "retrieval_recall": 0.0,
+        "must_contain_coverage": 0.0,
+        "latency_s": 10.191406771002221,
+        "answer": "[3] Segundo a legislação brasileira, medicamentos manipulados geralmente precisam ser prescritos por um profissional de saúde. No entanto, a pergunta específica sobre a possibilidade de compra sem receita não está claramente respondida no contexto fornecido.\n\nA recomendação é consultar o farmacêutico responsável para obter informações mais detalhadas e precisas sobre os medicamentos manipulados disponíveis na OpenCall."
+      }
+    },
+    {
+      "id": "q22",
+      "category": "faq",
+      "question": "Quais medicamentos posso pedir pelo delivery da farmácia?",
+      "answer": "[1] Você pode pedir medicamentos isentos de prescrição (MIP), tarjados mediante receita digital válida e antimicrobianos com receita digital válida pelo delivery. Medicamentos controlados das listas C1, C2, C4, C5 com assinatura qualificada ICP-Brasil também podem ser entregues.\n\nMedicamentos controlados das listas A (amarela) e B (azul) NÃO podem ser entregues pelo delivery. Esses medicamentos exigem notificação física em talonário oficial e devem ser apresentados presencialmente.\n\nPara enviar sua receita digital, siga as instruções específicas da farmácia que opera o serviço de delivery.",
+      "sources": [
+        {
+          "source": "data/samples/faq_delivery.txt",
+          "score": 0.80588484
+        },
+        {
+          "source": "data/samples/faq_generico.txt",
+          "score": 0.7785541
+        },
+        {
+          "source": "data/samples/faq_generico.txt",
+          "score": 0.77330804
+        }
+      ],
+      "refused": false,
+      "retrieval_scores": [
+        0.80588484,
+        0.7785541,
+        0.77330804
+      ],
+      "latency_s": 13.40897379099988,
+      "metrics": {
+        "id": "q22",
+        "category": "faq",
+        "refused_expected": false,
+        "refused_actual": false,
+        "retrieval_recall": 0.5,
+        "must_contain_coverage": 1.0,
+        "latency_s": 13.40897379099988,
+        "answer": "[1] Você pode pedir medicamentos isentos de prescrição (MIP), tarjados mediante receita digital válida e antimicrobianos com receita digital válida pelo delivery. Medicamentos controlados das listas C1, C2, C4, C5 com assinatura qualificada ICP-Brasil também podem ser entregues.\n\nMedicamentos controlados das listas A (amarela) e B (azul) NÃO podem ser entregues pelo delivery. Esses medicamentos exigem notificação física em talonário oficial e devem ser apresentados presencialmente.\n\nPara enviar sua receita digital, siga as instruções específicas da farmácia que opera o serviço de delivery."
+      }
+    },
+    {
+      "id": "q23",
+      "category": "politica",
+      "question": "A farmácia pode recusar vender controlado sem carimbo do médico?",
+      "answer": "[3] A farmácia não pode recusar vender medicamentos controlados sem carimbo do médico, pois isso é uma obrigação legal para prescrição médica. No entanto, a farmácia tem o direito de verificar a receita e os documentos necessários conforme as normas sanitárias [1].",
+      "sources": [
+        {
+          "source": "data/samples/faq_medicamentos_controlados.txt",
+          "score": 0.7724983
+        },
+        {
+          "source": "data/samples/faq_descarte.txt",
+          "score": 0.7554778
+        },
+        {
+          "source": "data/samples/transcricao_devolucao_antibiotico.txt",
+          "score": 0.7509496
+        }
+      ],
+      "refused": false,
+      "retrieval_scores": [
+        0.7724983,
+        0.7554778,
+        0.7509496
+      ],
+      "latency_s": 9.16400352599885,
+      "metrics": {
+        "id": "q23",
+        "category": "politica",
+        "refused_expected": false,
+        "refused_actual": false,
+        "retrieval_recall": 0.0,
+        "must_contain_coverage": 1.0,
+        "latency_s": 9.16400352599885,
+        "answer": "[3] A farmácia não pode recusar vender medicamentos controlados sem carimbo do médico, pois isso é uma obrigação legal para prescrição médica. No entanto, a farmácia tem o direito de verificar a receita e os documentos necessários conforme as normas sanitárias [1]."
+      }
+    },
+    {
+      "id": "q24",
+      "category": "produto",
+      "question": "Qual a tarja do medicamento genérico?",
+      "answer": "A tarja do medicamento genérico é amarela e contém a letra G e a inscrição \"Medicamento Genérico — Lei 9.787/99\". [2]",
+      "sources": [
+        {
+          "source": "data/samples/politica_rotulagem_bula.txt",
+          "score": 0.8304828
+        },
+        {
+          "source": "data/samples/faq_generico.txt",
+          "score": 0.8142638
+        },
+        {
+          "source": "data/samples/faq_farmacia_popular.txt",
+          "score": 0.7640681
+        }
+      ],
+      "refused": false,
+      "retrieval_scores": [
+        0.8304828,
+        0.8142638,
+        0.7640681
+      ],
+      "latency_s": 8.566280815997743,
+      "metrics": {
+        "id": "q24",
+        "category": "produto",
+        "refused_expected": false,
+        "refused_actual": false,
+        "retrieval_recall": 0.5,
+        "must_contain_coverage": 1.0,
+        "latency_s": 8.566280815997743,
+        "answer": "A tarja do medicamento genérico é amarela e contém a letra G e a inscrição \"Medicamento Genérico — Lei 9.787/99\". [2]"
+      }
+    },
+    {
+      "id": "q25",
+      "category": "regulatorio",
+      "question": "O farmacêutico pode prescrever medicamento tarjado?",
+      "answer": "A informação sobre farmacêuticos prescreverem medicamentos tarjados não está presente nos trechos fornecidos [1] a [3]. Sugiro que o cliente consulte o farmacêutico responsável para obter informações mais detalhadas sobre esse assunto.",
+      "sources": [
+        {
+          "source": "data/samples/politica_rotulagem_bula.txt",
+          "score": 0.8023577
+        },
+        {
+          "source": "data/samples/faq_trocas_devolucoes.txt",
+          "score": 0.76783955
+        },
+        {
+          "source": "data/samples/faq_generico.txt",
+          "score": 0.7667043
+        }
+      ],
+      "refused": false,
+      "retrieval_scores": [
+        0.8023577,
+        0.76783955,
+        0.7667043
+      ],
+      "latency_s": 8.697358571000223,
+      "metrics": {
+        "id": "q25",
+        "category": "regulatorio",
+        "refused_expected": false,
+        "refused_actual": false,
+        "retrieval_recall": 0.0,
+        "must_contain_coverage": 0.0,
+        "latency_s": 8.697358571000223,
+        "answer": "A informação sobre farmacêuticos prescreverem medicamentos tarjados não está presente nos trechos fornecidos [1] a [3]. Sugiro que o cliente consulte o farmacêutico responsável para obter informações mais detalhadas sobre esse assunto."
+      }
+    },
+    {
+      "id": "q26",
+      "category": "transcricao",
+      "question": "Puran T4 pode ser trocado por levotiroxina genérica?",
+      "answer": "[1] Sim, pode ser trocado. O genérico de levotiroxina sódica é intercambiável com Puran T4, pois passa por testes de bioequivalência e biodisponibilidade exigidos pela Lei 9.787/1999 e pela ANVISA, garantindo que tenha o mesmo efeito no organismo.\n\nSe tiver mais alguma dúvida, sugiro consultar o farmacêutico responsável para maiores esclarecimentos.",
+      "sources": [
+        {
+          "source": "data/samples/transcricao_generico_vs_referencia.txt",
+          "score": 0.74847656
+        },
+        {
+          "source": "data/samples/politica_farmacia_popular.txt",
+          "score": 0.7105901
+        },
+        {
+          "source": "data/samples/politica_servicos_farmaceuticos.txt",
+          "score": 0.6993009
+        }
+      ],
+      "refused": false,
+      "retrieval_scores": [
+        0.74847656,
+        0.7105901,
+        0.6993009
+      ],
+      "latency_s": 11.012923444002809,
+      "metrics": {
+        "id": "q26",
+        "category": "transcricao",
+        "refused_expected": false,
+        "refused_actual": false,
+        "retrieval_recall": 0.5,
+        "must_contain_coverage": 1.0,
+        "latency_s": 11.012923444002809,
+        "answer": "[1] Sim, pode ser trocado. O genérico de levotiroxina sódica é intercambiável com Puran T4, pois passa por testes de bioequivalência e biodisponibilidade exigidos pela Lei 9.787/1999 e pela ANVISA, garantindo que tenha o mesmo efeito no organismo.\n\nSe tiver mais alguma dúvida, sugiro consultar o farmacêutico responsável para maiores esclarecimentos."
+      }
+    },
+    {
+      "id": "q27",
+      "category": "transcricao",
+      "question": "Minha receita de clonazepam venceu. Posso usar mesmo assim?",
+      "answer": "[1] Infelizmente, sua receita de clonazepam venceu pois a validade é de 30 dias a contar da data de emissão, conforme a Portaria 344/1998 da ANVISA. Como já passou deste prazo, será necessário obter uma nova receita.\n\n[2] A receita azul (lista B), como a sua, é válida por 30 dias e deve ser usada apenas no estado emissor.\n\nSugiro que você entre em contato com seu médico para solicitar uma nova prescrição.",
+      "sources": [
+        {
+          "source": "data/samples/transcricao_receita_controlada_vencida.txt",
+          "score": 0.7901399
+        },
+        {
+          "source": "data/samples/faq_medicamentos_controlados.txt",
+          "score": 0.73598945
+        },
+        {
+          "source": "data/samples/transcricao_receita_digital.txt",
+          "score": 0.7298247
+        }
+      ],
+      "refused": false,
+      "retrieval_scores": [
+        0.7901399,
+        0.73598945,
+        0.7298247
+      ],
+      "latency_s": 11.549891973998456,
+      "metrics": {
+        "id": "q27",
+        "category": "transcricao",
+        "refused_expected": false,
+        "refused_actual": false,
+        "retrieval_recall": 0.5,
+        "must_contain_coverage": 0.5,
+        "latency_s": 11.549891973998456,
+        "answer": "[1] Infelizmente, sua receita de clonazepam venceu pois a validade é de 30 dias a contar da data de emissão, conforme a Portaria 344/1998 da ANVISA. Como já passou deste prazo, será necessário obter uma nova receita.\n\n[2] A receita azul (lista B), como a sua, é válida por 30 dias e deve ser usada apenas no estado emissor.\n\nSugiro que você entre em contato com seu médico para solicitar uma nova prescrição."
+      }
+    },
+    {
+      "id": "q28",
+      "category": "transcricao",
+      "question": "Lote recolhido por recall: preciso de nota fiscal para devolver?",
+      "answer": "Não é obrigatório trazer a nota fiscal para devolver o medicamento em caso de recall, mas ela pode ajudar na identificação da compra [2].",
+      "sources": [
+        {
+          "source": "data/samples/faq_recall.txt",
+          "score": 0.7555725
+        },
+        {
+          "source": "data/samples/transcricao_recall_lote.txt",
+          "score": 0.7480909
+        },
+        {
+          "source": "data/samples/faq_recall.txt",
+          "score": 0.7226496
+        }
+      ],
+      "refused": false,
+      "retrieval_scores": [
+        0.7555725,
+        0.7480909,
+        0.7226496
+      ],
+      "latency_s": 6.853375589002098,
+      "metrics": {
+        "id": "q28",
+        "category": "transcricao",
+        "refused_expected": false,
+        "refused_actual": false,
+        "retrieval_recall": 0.6666666666666666,
+        "must_contain_coverage": 0.3333333333333333,
+        "latency_s": 6.853375589002098,
+        "answer": "Não é obrigatório trazer a nota fiscal para devolver o medicamento em caso de recall, mas ela pode ajudar na identificação da compra [2]."
+      }
+    },
+    {
+      "id": "q29",
+      "category": "transcricao",
+      "question": "Pode-se jogar medicamento líquido vencido no vaso sanitário?",
+      "answer": "[2] Não, não se deve jogar medicamentos vencidos no vaso sanitário. De acordo com as diretrizes, medicamentos vencidos devem ser descartados em coletores de logística reversa disponíveis em drogarias e farmácias credenciadas, conforme o Decreto 10.388/2020. Jogar no lixo ou no vaso sanitário contamina solo e água e pode chegar ao lençol freático.\n\nSe você tiver medicamento líquido vencido, é recomendável levar até a farmácia mais próxima para descarte adequado.",
+      "sources": [
+        {
+          "source": "data/samples/faq_generico.txt",
+          "score": 0.7529992
+        },
+        {
+          "source": "data/samples/faq_descarte.txt",
+          "score": 0.74927604
+        },
+        {
+          "source": "data/samples/transcricao_farmacia_popular.txt",
+          "score": 0.7430707
+        }
+      ],
+      "refused": false,
+      "retrieval_scores": [
+        0.7529992,
+        0.74927604,
+        0.7430707
+      ],
+      "latency_s": 12.476286208999227,
+      "metrics": {
+        "id": "q29",
+        "category": "transcricao",
+        "refused_expected": false,
+        "refused_actual": false,
+        "retrieval_recall": 0.3333333333333333,
+        "must_contain_coverage": 0.5,
+        "latency_s": 12.476286208999227,
+        "answer": "[2] Não, não se deve jogar medicamentos vencidos no vaso sanitário. De acordo com as diretrizes, medicamentos vencidos devem ser descartados em coletores de logística reversa disponíveis em drogarias e farmácias credenciadas, conforme o Decreto 10.388/2020. Jogar no lixo ou no vaso sanitário contamina solo e água e pode chegar ao lençol freático.\n\nSe você tiver medicamento líquido vencido, é recomendável levar até a farmácia mais próxima para descarte adequado."
+      }
+    },
+    {
+      "id": "q30",
+      "category": "regulatorio",
+      "question": "Qual assinatura eletrônica é exigida para prescrever isotretinoína?",
+      "answer": "A assinatura eletrônica exigida para prescrever isotretinoína é a qualificada, conforme estabelecido pela Lei 14.063/2020 [2]. Este nível de assinatura requer um certificado digital emitido por Autoridade Certificadora da ICP-Brasil.\n\nFonte: [2]",
+      "sources": [
+        {
+          "source": "data/samples/transcricao_receita_digital.txt",
+          "score": 0.74600005
+        },
+        {
+          "source": "data/samples/politica_receita_digital.txt",
+          "score": 0.7371187
+        },
+        {
+          "source": "data/samples/politica_antimicrobianos.txt",
+          "score": 0.7283025
+        }
+      ],
+      "refused": false,
+      "retrieval_scores": [
+        0.74600005,
+        0.7371187,
+        0.7283025
+      ],
+      "latency_s": 9.481595379998907,
+      "metrics": {
+        "id": "q30",
+        "category": "regulatorio",
+        "refused_expected": false,
+        "refused_actual": false,
+        "retrieval_recall": 0.5,
+        "must_contain_coverage": 0.6666666666666666,
+        "latency_s": 9.481595379998907,
+        "answer": "A assinatura eletrônica exigida para prescrever isotretinoína é a qualificada, conforme estabelecido pela Lei 14.063/2020 [2]. Este nível de assinatura requer um certificado digital emitido por Autoridade Certificadora da ICP-Brasil.\n\nFonte: [2]"
+      }
+    }
+  ]
+}
