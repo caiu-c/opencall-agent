@@ -74,11 +74,27 @@ def ask(
         "--collection",
         help="Qdrant collection to query.",
     ),
+    filter_expr: str | None = typer.Option(
+        None,
+        "--filter",
+        help="Metadata filter, e.g. category=politica. Only 'category' is supported.",
+    ),
 ) -> None:
     """Ask a question against the knowledge base."""
     settings = get_settings()
     client = make_client(settings)
-    resp = rag_answer(settings, client, question, collection)
+
+    category = None
+    if filter_expr:
+        if "=" not in filter_expr or not filter_expr.startswith("category="):
+            typer.echo(
+                "Only 'category=<value>' filters are supported (e.g. category=politica).",
+                err=True,
+            )
+            raise typer.Exit(code=2)
+        category = filter_expr.split("=", 1)[1].strip() or None
+
+    resp = rag_answer(settings, client, question, collection, category_filter=category)
 
     typer.echo(resp.answer)
     typer.echo("")

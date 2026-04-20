@@ -69,7 +69,10 @@ def answer(
     contexts = format_contexts([h.text for h in hits])
     messages = [
         {"role": "system", "content": SYSTEM_PROMPT},
-        {"role": "user", "content": USER_TEMPLATE.format(question=question, contexts=contexts)},
+        {
+            "role": "user",
+            "content": USER_TEMPLATE.format(question=question, filter_note="", contexts=contexts),
+        },
     ]
     text = complete(settings, messages)
 

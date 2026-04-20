@@ -10,14 +10,21 @@ from langchain_core.messages import AIMessage, HumanMessage, ToolMessage
 from langgraph.graph import END, START, StateGraph
 from langgraph.graph.message import add_messages
 from qdrant_client import QdrantClient
+from qdrant_client.models import FieldCondition, Filter, MatchValue
 
 from ..config import Settings
 from ..llm import complete
 from ..vector import Hit, retrieve
-from .prompts import SYSTEM_PROMPT, USER_TEMPLATE, format_contexts
+from .prompts import SYSTEM_PROMPT, USER_TEMPLATE, filter_note, format_contexts
 from .rag_chain import REFUSAL_PHRASE, RagResponse, SourceRef
 
 RETRIEVE_TOOL_NAME = "retrieve"
+
+
+def _build_filter(category: str | None) -> Filter | None:
+    if not category:
+        return None
+    return Filter(must=[FieldCondition(key="category", match=MatchValue(value=category))])
 
 
 class AgentState(TypedDict):
@@ -29,6 +36,7 @@ class AgentState(TypedDict):
 
     question: str
     collection: str
+    category_filter: str | None
     messages: Annotated[list, add_messages]
     hits: list[Hit]
     sources: list[SourceRef]
@@ -56,13 +64,16 @@ def _plan_node(state: AgentState) -> dict:
     so downstream nodes and trace consumers see a recognizable agent loop.
     """
     call_id = f"call_{uuid4().hex[:8]}"
+    args: dict = {"query": state["question"]}
+    if state.get("category_filter"):
+        args["category"] = state["category_filter"]
     ai = AIMessage(
         content="",
         tool_calls=[
             {
                 "id": call_id,
                 "name": RETRIEVE_TOOL_NAME,
-                "args": {"query": state["question"]},
+                "args": args,
             }
         ],
     )
@@ -77,8 +88,15 @@ def _retrieve_node(
     )
     call = last_ai.tool_calls[0]
     query = call["args"]["query"]
+    category = call["args"].get("category")
 
-    hits = retrieve(settings, client, query, state["collection"])
+    hits = retrieve(
+        settings,
+        client,
+        query,
+        state["collection"],
+        query_filter=_build_filter(category),
+    )
     sources = [_to_source_ref(h) for h in hits]
     payload = [
         {"idx": i + 1, "score": round(h.score, 4), "source": h.source, "text": h.text}
@@ -106,12 +124,14 @@ def _route_after_retrieve(state: AgentState, *, settings: Settings) -> str:
 
 def _synthesize_node(state: AgentState, *, settings: Settings) -> dict:
     contexts = format_contexts([h.text for h in state["hits"]])
+    user = USER_TEMPLATE.format(
+        question=state["question"],
+        filter_note=filter_note(state.get("category_filter")),
+        contexts=contexts,
+    )
     prompt_messages = [
         {"role": "system", "content": SYSTEM_PROMPT},
-        {
-            "role": "user",
-            "content": USER_TEMPLATE.format(question=state["question"], contexts=contexts),
-        },
+        {"role": "user", "content": user},
     ]
     text = complete(settings, prompt_messages)
     return {
@@ -177,12 +197,14 @@ def answer(
     client: QdrantClient,
     question: str,
     collection: str,
+    category_filter: str | None = None,
 ) -> RagResponse:
     """Run the agent graph to produce a RagResponse."""
     app = _get_compiled(settings, client)
     initial: AgentState = {
         "question": question,
         "collection": collection,
+        "category_filter": category_filter,
         "messages": [HumanMessage(content=question)],
         "hits": [],
         "sources": [],
