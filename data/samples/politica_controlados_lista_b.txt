@@ -1,0 +1,35 @@
+POLÍTICA — DISPENSAÇÃO DE MEDICAMENTOS LISTA B (PSICOTRÓPICOS — RECEITA AZUL)
+
+Base normativa: Portaria SVS/MS 344/1998.
+
+Medicamentos da Lista B são dispensados mediante Notificação de Receita B
+(azul), emitida em talonário fornecido pela vigilância sanitária estadual ao
+prescritor. Validade de 30 dias a partir da emissão, restrita ao estado de
+origem.
+
+Subdivisões:
+- B1 — psicotrópicos (exemplo: clonazepam, diazepam, alprazolam, zolpidem).
+  Quantidade máxima por notificação corresponde a 60 dias de tratamento.
+- B2 — psicotrópicos anorexígenos (exemplo: femproporex, mazindol —
+  atualmente com restrições severas). Quantidade máxima por notificação
+  corresponde a 30 dias de tratamento.
+
+Procedimento na dispensação:
+1. Verificação de identidade do comprador com documento oficial com foto.
+2. Conferência da notificação: campos completos, CRM, carimbo e assinatura.
+3. Retenção da 1ª via da notificação no estabelecimento.
+4. Escrituração no SNGPC em até 7 dias.
+5. Arquivamento por, no mínimo, 2 anos.
+
+Renovação: o paciente em tratamento contínuo precisa de nova notificação a cada
+30 dias. Não há renovação automática pela farmácia.
+
+Receita digital para Lista B atualmente exige que a notificação siga em
+talonário físico azul; a assinatura digital, isoladamente, não substitui a
+notificação oficial. Atualizações da RDC 471/2021 ampliaram a prescrição
+eletrônica para outras listas, mas não para B1/B2 — consultar sempre a versão
+vigente da norma.
+
+Em todos os casos, o farmacêutico orienta o paciente sobre adesão, interações
+com álcool e outros depressores do SNC, e registra eventos adversos no VigiMed
+quando aplicável.

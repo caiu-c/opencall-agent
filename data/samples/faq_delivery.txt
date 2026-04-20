@@ -1,0 +1,51 @@
+PERGUNTAS FREQUENTES — DELIVERY E COMPRA ONLINE
+
+A OpenCall entrega medicamentos em casa?
+Sim, em unidades que operam delivery próprio ou via aplicativo. A operação
+segue a RDC 44/2009 e a RDC 657/2022 da ANVISA.
+
+Quais medicamentos chegam pelo delivery?
+- Medicamentos isentos de prescrição (MIP).
+- Tarjados mediante receita digital válida (assinatura avançada ou
+  qualificada conforme a categoria).
+- Antimicrobianos com receita digital válida.
+- Controlados das listas C1, C2, C4, C5 com assinatura qualificada
+  ICP-Brasil.
+
+Que medicamentos NÃO podem ser entregues?
+Controlados das listas A (amarela) e B (azul). Essas exigem notificação
+física em talonário oficial; é preciso apresentar presencialmente.
+
+Como envio minha receita digital?
+Anexe o arquivo (PDF) na tela de pedido do app ou envie pelo canal indicado
+pelo atendimento. A farmácia valida via QR Code ou hash antes de separar o
+pedido.
+
+Preciso estar em casa para receber?
+Medicamentos tarjados e antimicrobianos exigem conferência de identidade do
+destinatário maior de 18 anos no ato da entrega. Controlados exigem maior
+rigor: destinatário ou responsável indicado na receita.
+
+Termolábeis (insulina, vacina) vão refrigerados?
+Sim. Usamos embalagem isotérmica validada com monitor de temperatura. Você
+recebe orientação para refrigerar imediatamente. Qualquer divergência de
+temperatura no ato da entrega, recuse o pedido.
+
+O que é o direito de arrependimento?
+Para compras não-presenciais, o CDC art. 49 dá 7 dias a contar do
+recebimento para devolver o produto, sem justificar. O valor é restituído
+integralmente, com frete. Exceção: termolábeis já entregues e medicamentos
+em desacordo com a RDC 44/2009.
+
+Meu pedido atrasou, o que faço?
+Entre em contato pelo SAC informando o número do protocolo. Em atrasos
+acima de 24h acima do prazo prometido, você pode optar por cancelamento
+com reembolso integral.
+
+A entrega é em qualquer estado?
+Sim, exceto medicamentos com restrição territorial (controlados lista A e B
+— apenas estado emissor da notificação).
+
+O entregador é farmacêutico?
+Não necessariamente. Mas toda a dispensação é validada pelo farmacêutico
+responsável técnico antes do envio, com registro no sistema.

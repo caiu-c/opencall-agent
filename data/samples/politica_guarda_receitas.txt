@@ -1,0 +1,49 @@
+POLÍTICA — GUARDA, ARQUIVAMENTO E RETENÇÃO DOCUMENTAL
+
+Base normativa: Portaria SVS/MS 344/1998, RDC 20/2011 (antimicrobianos),
+RDC 27/2007 (SNGPC), LGPD Lei 13.709/2018, CTN (prazos fiscais).
+
+Prazos de retenção documental na OpenCall:
+
+Receitas e notificações:
+- Notificação de Receita A (amarela), B (azul) e Receita de Controle
+  Especial (branca, 2ª via retida): arquivamento mínimo de 2 anos, ordenadas
+  sequencialmente por data de dispensação.
+- Receita de antimicrobianos (2ª via retida): 2 anos.
+- Receitas comuns de tarjados que não exigem retenção: não são arquivadas
+  além do atendimento.
+
+Receitas digitais:
+- Registro do identificador único (QR Code/hash) por 2 anos.
+- Comprovante eletrônico de dispensação com carimbo digital farmacêutico.
+- Impressão sob demanda durante fiscalização.
+
+Prontuário farmacêutico e serviços clínicos:
+- 5 anos após o último atendimento (CFF 585/2013).
+
+SNGPC:
+- Dados de movimentação mantidos por 2 anos no sistema.
+- Comprovantes de balanço e inventário anual por 5 anos.
+
+Documentos fiscais:
+- Notas fiscais e cupons fiscais: 5 anos (CTN art. 173).
+- Livros e escriturações contábeis: conforme legislação vigente.
+
+Cadeia de frio e qualidade:
+- Registros de temperatura, mapeamento térmico e excursões térmicas: 5 anos
+  (RDC 430/2020).
+- Certificados de análise de matéria-prima em farmácia de manipulação: 5 anos.
+
+Logística reversa:
+- Registro de coleta de medicamentos vencidos e destinação: 4 anos (Decreto
+  10.388/2020).
+
+Dados pessoais (LGPD):
+- Dados cadastrais: até 5 anos após a última compra ou até revogação do
+  consentimento, observando prazos fiscais concorrentes.
+- Dados sensíveis de saúde: prazo estritamente necessário à finalidade
+  declarada; eliminação segura após o prazo (art. 16 LGPD).
+
+Método de eliminação: após os prazos, documentos físicos são fragmentados por
+empresa credenciada com emissão de certificado; arquivos digitais são
+excluídos de forma irreversível. Registro da eliminação é mantido.

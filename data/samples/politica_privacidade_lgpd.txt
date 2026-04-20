@@ -1,0 +1,43 @@
+POLÍTICA — PRIVACIDADE E TRATAMENTO DE DADOS DE SAÚDE (LGPD)
+
+Base normativa: Lei 13.709/2018 (LGPD), Resolução CD/ANPD 2/2022.
+
+A OpenCall Farmácia trata dados pessoais sensíveis — dados de saúde — e
+portanto opera sob o regime do artigo 11 da LGPD, que exige hipóteses
+específicas para tratamento legítimo.
+
+Bases legais utilizadas:
+- Consentimento específico e destacado do titular, para programas de
+  fidelidade, marketing direto ou envio de conteúdo educativo.
+- Tutela da saúde por profissional de saúde ou entidade sanitária, aplicada à
+  dispensação, orientação farmacêutica e acompanhamento farmacoterapêutico
+  (art. 11, II, "f").
+- Cumprimento de obrigação legal, aplicada à escrituração no SNGPC, retenção
+  de receitas e comunicação de eventos adversos à ANVISA.
+
+Dados coletados:
+- Identificação (nome, CPF, endereço, contato).
+- Dados de compra e dispensação, incluindo medicamentos adquiridos e datas.
+- Dados clínicos quando informados pelo paciente (alergias, comorbidades,
+  uso de outros medicamentos).
+
+Vedações:
+- É proibido o compartilhamento de dados de saúde com terceiros para
+  finalidade econômica, salvo as exceções do art. 11, §4º (prestação de
+  serviços de saúde, assistência farmacêutica, portabilidade a pedido do
+  titular).
+- É proibida a venda de listas de clientes que incluam histórico de compra
+  de medicamentos.
+
+Direitos do titular (art. 18 LGPD):
+- Confirmação e acesso aos dados tratados.
+- Correção, anonimização ou eliminação de dados.
+- Portabilidade a outro fornecedor.
+- Revogação do consentimento a qualquer tempo, sem ônus.
+
+Retenção: receitas retidas mantidas por 2 anos; dados cadastrais por até 5
+anos após a última compra; dados fiscais pelo prazo legal (5 anos).
+
+Comunicação de incidentes à ANPD e aos titulares em prazo razoável, conforme
+Resolução CD/ANPD 15/2024. Multas aplicáveis: até 2% do faturamento, limitadas
+a R$ 50 milhões por infração.

@@ -1,0 +1,39 @@
+POLÍTICA — RECEITA DIGITAL E PRESCRIÇÃO ELETRÔNICA
+
+Base normativa: Lei 14.063/2020 (assinatura eletrônica no setor público e
+saúde), RDC ANVISA 471/2021, Portaria GM/MS 2.466/2022.
+
+A Lei 14.063/2020 estabelece três níveis de assinatura eletrônica:
+- Simples — identificação por credencial básica.
+- Avançada — com uso de certificado digital não-ICP Brasil, mas com
+  associação inequívoca ao signatário.
+- Qualificada — com certificado digital emitido por Autoridade Certificadora
+  da ICP-Brasil.
+
+Aplicação em receitas na OpenCall:
+
+1. Medicamentos isentos de prescrição (MIP): não exigem receita.
+2. Medicamentos tarjados comuns (sem controle especial): aceitos com
+   assinatura avançada ou qualificada.
+3. Medicamentos sujeitos a controle especial das listas C1, C2, C4 e C5:
+   aceitos com assinatura qualificada (ICP-Brasil), conforme RDC 471/2021.
+4. Antimicrobianos (RDC 20/2011): aceitos com assinatura avançada ou
+   qualificada, com validação por QR Code/hash.
+5. Controlados das listas A e B: requerem notificação física (amarela/azul)
+   em papel oficial, conforme Portaria 344/1998. Receita digital isolada não
+   substitui a notificação.
+
+Procedimento de validação pela farmácia:
+- Escaneamento do QR Code ou link de validação impresso/anexado à receita.
+- Verificação da autenticidade junto à plataforma emissora ou ao CRM do
+  prescritor.
+- Registro do identificador único da receita no sistema interno para impedir
+  reuso em outra unidade.
+- Impressão ou arquivamento eletrônico do comprovante de dispensação.
+
+Receita em PDF ou imagem sem QR Code/hash NÃO é aceita — a farmácia não tem
+como validar a assinatura eletrônica, e a dispensação expõe o estabelecimento
+a autuação sanitária.
+
+A Portaria GM/MS 2.466/2022 reconheceu a prescrição eletrônica no âmbito do
+SUS, estendendo o mesmo padrão de validação.

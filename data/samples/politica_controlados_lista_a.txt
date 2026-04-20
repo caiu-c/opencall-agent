@@ -1,0 +1,36 @@
+POLÍTICA — DISPENSAÇÃO DE MEDICAMENTOS LISTA A (ENTORPECENTES E PSICOTRÓPICOS)
+
+Base normativa: Portaria SVS/MS 344/1998 (Regulamento Técnico sobre Substâncias
+e Medicamentos Sujeitos a Controle Especial), RDC ANVISA 27/2007 (SNGPC) e
+atualizações.
+
+Substâncias de uso restrito da Lista A são dispensadas exclusivamente mediante
+Notificação de Receita Amarela (modelo A), fornecida pela autoridade sanitária
+estadual ao prescritor. A notificação é válida por 30 dias a contar da data de
+emissão e restrita ao estado em que foi emitida. Subdivisões:
+
+- A1 — entorpecentes (exemplo: morfina, metadona, fentanil). Dispensação
+  limitada ao quantitativo correspondente a 30 dias de tratamento.
+- A2 — entorpecentes de uso permitido somente em concentrações especiais.
+- A3 — psicotrópicos (exemplo: metilfenidato, anfepramona). Mesma regra de
+  30 dias de tratamento por notificação.
+
+Procedimento obrigatório na farmácia:
+1. Conferir identidade, CPF e endereço do comprador (responsável legal em caso
+   de menor de idade ou incapaz).
+2. Validar a notificação: preenchimento correto, numeração sequencial, CRM do
+   prescritor, carimbo, assinatura e ausência de rasuras.
+3. Reter a primeira via da notificação (amarela) fisicamente no estabelecimento.
+4. Escriturar a movimentação no Sistema Nacional de Gerenciamento de Produtos
+   Controlados (SNGPC) em até 7 dias.
+5. Arquivar a notificação retida pelo prazo mínimo de 2 anos, à disposição da
+   vigilância sanitária.
+
+A venda sem notificação válida configura infração sanitária prevista na Lei
+6.437/1977, sujeita à multa e suspensão de atividades. Em caso de rasura,
+divergência de dados ou suspeita de falsificação, o farmacêutico responsável
+técnico recusa a dispensação e orienta o paciente a retornar ao prescritor.
+
+Receita digital para Lista A não é aceita na data desta política — a Portaria
+344/1998 exige notificação física em papel oficial. Exceções futuras dependem
+de publicação expressa pela ANVISA.
