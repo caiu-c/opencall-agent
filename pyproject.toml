@@ -5,14 +5,18 @@ description = "Agentic RAG for call center (OpenCall) — LangGraph + LiteLLM + 
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "fastapi>=0.136.0",
+    "httpx>=0.28.1",
     "langgraph>=1.1.8",
     "litellm>=1.83.9",
     "opentelemetry-api>=1.41.0",
     "opentelemetry-sdk>=1.41.0",
     "pydantic-settings>=2.11.0",
     "python-dotenv>=1.0.1",
+    "python-multipart>=0.0.26",
     "qdrant-client>=1.17.1",
     "typer>=0.23.0",
+    "uvicorn>=0.44.0",
 ]
 
 [project.scripts]

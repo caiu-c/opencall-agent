@@ -31,6 +31,18 @@ def _infer_category(filename: str) -> str | None:
 
 
 @app.command()
+def serve(
+    host: str = typer.Option("127.0.0.1", "--host"),
+    port: int = typer.Option(8000, "--port"),
+    reload: bool = typer.Option(False, "--reload"),
+) -> None:
+    """Run the FastAPI server."""
+    import uvicorn
+
+    uvicorn.run("opencall_agent.api:app", host=host, port=port, reload=reload)
+
+
+@app.command()
 def smoke() -> None:
     """Run end-to-end stack smoke test (LLM + embedding + Qdrant)."""
     from .smoke import main as smoke_main

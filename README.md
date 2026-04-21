@@ -48,6 +48,9 @@ uv run opencall ingest-dir data/samples --reset
 # Perguntar à base de conhecimento
 uv run opencall ask "Qual a validade da receita de antibiótico?"
 
+# Subir API HTTP (FastAPI em 127.0.0.1:8000, com OpenAPI em /docs)
+uv run opencall serve
+
 # Testes (unit só por padrão; integration/acceptance rodam se serviços estiverem up)
 uv run pytest
 ```
@@ -65,5 +68,5 @@ Especificação do projeto em [`docs/`](./docs/): requisitos, plano de testes e 
 - [x] M6 — Filtros de metadados
 - [x] M7 — Harness de avaliação
 - [x] M8 — Observabilidade
-- [ ] M9 — API HTTP
+- [x] M9 — API HTTP
 - [ ] M10 — Deploy
