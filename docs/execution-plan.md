@@ -97,6 +97,19 @@
 - README updated with deploy steps
 - **DoD:** `docker compose up` + smoke query succeeds.
 
+### M11 — Two-track retrieval
+**Goal:** honor the original `transcricao = tone reference` commitment
+(`requirements.md` §7) — transcripts influence how the agent speaks, never
+what it cites.
+- Factual retrieval excludes `category=transcricao`; style retrieval (top-K
+  controlled by `OPENCALL_STYLE_TOP_K`) pulls transcript snippets into the
+  system prompt only.
+- Eval harness pins `style_top_k=0` so gold-set scores measure factual
+  retrieval alone.
+- Gold set cleaned: rows previously requiring `transcricao_*.txt` in
+  `must_cite` re-tagged against the backing policy/faq sources.
+- **DoD:** acceptance `test_us_s5_two_track` passes; eval recall ≥ baseline.
+
 ## Future (post-MVP)
 
 - End-customer self-service bot

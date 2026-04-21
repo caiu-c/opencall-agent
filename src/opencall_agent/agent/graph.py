@@ -16,16 +16,40 @@ from ..config import Settings
 from ..llm import complete
 from ..observability import get_tracer, set_attr
 from ..vector import Hit, retrieve
-from .prompts import SYSTEM_PROMPT, USER_TEMPLATE, filter_note, format_contexts
+from .prompts import (
+    SYSTEM_PROMPT,
+    USER_TEMPLATE,
+    filter_note,
+    format_contexts,
+    format_style_block,
+)
 from .rag_chain import REFUSAL_PHRASE, RagResponse, SourceRef
 
 RETRIEVE_TOOL_NAME = "retrieve"
+# Transcripts are synthesized dialog — used only as tone reference, never cited
+# as factual source. See docs/requirements.md §7 and ADR 003.
+STYLE_CATEGORY = "transcricao"
 
 
-def _build_filter(category: str | None) -> Filter | None:
-    if not category:
-        return None
-    return Filter(must=[FieldCondition(key="category", match=MatchValue(value=category))])
+def _factual_filter(category: str | None) -> Filter | None:
+    """Filter for the citable retrieval pass.
+
+    Explicit user-supplied category passes through as-is (including the
+    degenerate `transcricao` case — preserved for debugging/browsing via the
+    CLI). Default path excludes `transcricao` so synthesized dialog can never
+    be cited in a normal answer.
+    """
+    if category:
+        return Filter(must=[FieldCondition(key="category", match=MatchValue(value=category))])
+    return Filter(
+        must_not=[FieldCondition(key="category", match=MatchValue(value=STYLE_CATEGORY))]
+    )
+
+
+def _style_filter() -> Filter:
+    return Filter(
+        must=[FieldCondition(key="category", match=MatchValue(value=STYLE_CATEGORY))]
+    )
 
 
 class AgentState(TypedDict):
@@ -40,6 +64,7 @@ class AgentState(TypedDict):
     category_filter: str | None
     messages: Annotated[list, add_messages]
     hits: list[Hit]
+    style_hits: list[Hit]
     sources: list[SourceRef]
     retrieval_scores: list[float]
     refused: bool
@@ -88,6 +113,12 @@ def _plan_node(state: AgentState) -> dict:
 def _retrieve_node(
     state: AgentState, *, settings: Settings, client: QdrantClient
 ) -> dict:
+    """Two-track retrieval: factual (citable) + stylistic (tone-only).
+
+    Only the factual pass round-trips through the tool-message protocol —
+    the ReAct shape tracked in US-S4 traces is about the model's citable
+    reasoning, so the stylistic pass is an internal side-retrieval.
+    """
     with get_tracer().start_as_current_span("agent.node.retrieve_tool") as span:
         last_ai = next(
             msg for msg in reversed(state["messages"]) if isinstance(msg, AIMessage)
@@ -98,14 +129,36 @@ def _retrieve_node(
         set_attr(span, "retrieval.query", query)
         set_attr(span, "retrieval.category", category or "")
 
-        hits = retrieve(
-            settings,
-            client,
-            query,
-            state["collection"],
-            query_filter=_build_filter(category),
-        )
+        with get_tracer().start_as_current_span("retrieval.factual") as fspan:
+            hits = retrieve(
+                settings,
+                client,
+                query,
+                state["collection"],
+                query_filter=_factual_filter(category),
+            )
+            set_attr(fspan, "retrieval.hits", len(hits))
+            if hits:
+                set_attr(fspan, "retrieval.top_score", hits[0].score)
+
+        style_hits: list[Hit] = []
+        if settings.style_top_k > 0 and not category:
+            # Skip style when the caller pins a specific category — they're
+            # either debugging or deliberately narrowing scope, and in either
+            # case injecting off-topic tone examples would add noise.
+            with get_tracer().start_as_current_span("retrieval.style") as sspan:
+                style_hits = retrieve(
+                    settings,
+                    client,
+                    query,
+                    state["collection"],
+                    k=settings.style_top_k,
+                    query_filter=_style_filter(),
+                )
+                set_attr(sspan, "retrieval.hits", len(style_hits))
+
         set_attr(span, "retrieval.hits", len(hits))
+        set_attr(span, "retrieval.style_hits", len(style_hits))
         if hits:
             set_attr(span, "retrieval.top_score", hits[0].score)
 
@@ -121,6 +174,7 @@ def _retrieve_node(
         )
         return {
             "hits": hits,
+            "style_hits": style_hits,
             "sources": sources,
             "retrieval_scores": [h.score for h in hits],
             "messages": [tool_msg],
@@ -137,17 +191,19 @@ def _route_after_retrieve(state: AgentState, *, settings: Settings) -> str:
 def _synthesize_node(state: AgentState, *, settings: Settings) -> dict:
     with get_tracer().start_as_current_span("agent.node.synthesize") as span:
         contexts = format_contexts([h.text for h in state["hits"]])
+        style_block = format_style_block([h.text for h in state.get("style_hits", [])])
         user = USER_TEMPLATE.format(
             question=state["question"],
             filter_note=filter_note(state.get("category_filter")),
             contexts=contexts,
         )
         prompt_messages = [
-            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "system", "content": SYSTEM_PROMPT + style_block},
             {"role": "user", "content": user},
         ]
         set_attr(span, "llm.model", settings.llm_model)
         set_attr(span, "llm.context_chunks", len(state["hits"]))
+        set_attr(span, "llm.style_examples", len(state.get("style_hits", [])))
         with get_tracer().start_as_current_span("llm.complete") as llm_span:
             text = complete(settings, prompt_messages)
             set_attr(llm_span, "llm.response_chars", len(text))
@@ -227,6 +283,7 @@ def answer(
         "category_filter": category_filter,
         "messages": [HumanMessage(content=question)],
         "hits": [],
+        "style_hits": [],
         "sources": [],
         "retrieval_scores": [],
         "refused": False,
