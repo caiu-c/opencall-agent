@@ -26,6 +26,10 @@ class Settings(BaseSettings):
     llm_temperature: float = Field(default=0.0, ge=0.0, le=2.0)
     retrieval_top_k: int = Field(default=3, ge=1, le=50)
     retrieval_score_threshold: float = Field(default=0.72, ge=0.0, le=1.0)
+    # Transcript snippets are injected into the system prompt as tone reference
+    # (never cited). 0 disables style retrieval entirely — e.g. for the eval
+    # harness, where stylistic reuse would muddy the retrieval_recall signal.
+    style_top_k: int = Field(default=2, ge=0, le=10)
 
 
 def get_settings() -> Settings:

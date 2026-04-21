@@ -51,6 +51,11 @@ def run_eval(
     gold_path: Path,
     max_rows: int | None = None,
 ) -> EvalResult:
+    # Style retrieval is disabled during eval: the gold set scores retrieval
+    # purely on factual `must_cite` hits, so letting transcript snippets leak
+    # phrasing into the answer would inflate `must_contain` coverage without
+    # proving the citable retrieval worked.
+    settings = settings.model_copy(update={"style_top_k": 0})
     rows: list[RowResult] = []
     for gold in load_gold(gold_path, max_rows=max_rows):
         t0 = time.perf_counter()

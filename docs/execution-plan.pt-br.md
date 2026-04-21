@@ -97,6 +97,19 @@
 - README atualizado com passos de deploy
 - **DoD:** `docker compose up` + query smoke funciona.
 
+### M11 — Retrieval de duas pistas
+**Objetivo:** cumprir o compromisso original de `transcricao = referência de
+tom` (`requirements.md` §7) — transcrições influenciam *como* o agente fala,
+nunca *o que* ele cita.
+- Retrieval factual exclui `category=transcricao`; retrieval estilístico
+  (top-K controlado por `OPENCALL_STYLE_TOP_K`) injeta trechos de transcrição
+  somente no system prompt.
+- Harness de avaliação força `style_top_k=0` para o gold medir apenas
+  retrieval factual.
+- Gold set limpo: linhas que exigiam `transcricao_*.txt` em `must_cite`
+  re-rotuladas contra as fontes de política/faq correspondentes.
+- **DoD:** aceite `test_us_s5_two_track` passa; recall do eval ≥ baseline.
+
 ## Futuro (pós-MVP)
 
 - Bot de auto-atendimento ao cliente final
