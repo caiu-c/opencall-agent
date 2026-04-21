@@ -1,0 +1,45 @@
+services:
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: opencall-qdrant
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_data:/qdrant/storage
+    restart: unless-stopped
+
+  # Opt-in Ollama. Most dev machines already run Ollama on the host; in that
+  # case leave this profile off and point the API at host.docker.internal.
+  ollama:
+    image: ollama/ollama:latest
+    container_name: opencall-ollama
+    profiles: ["ollama"]
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: opencall-api
+    depends_on:
+      qdrant:
+        condition: service_started
+    environment:
+      OPENCALL_QDRANT_URL: http://qdrant:6333
+      OPENCALL_OLLAMA_BASE_URL: ${OPENCALL_OLLAMA_BASE_URL:-http://host.docker.internal:11434}
+      OPENCALL_LLM_MODEL: ${OPENCALL_LLM_MODEL:-ollama/qwen2.5:7b}
+      OPENCALL_EMBED_MODEL: ${OPENCALL_EMBED_MODEL:-ollama/nomic-embed-text}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - "8000:8000"
+    restart: unless-stopped
+
+volumes:
+  qdrant_data:
+  ollama_data:
