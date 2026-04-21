@@ -25,6 +25,13 @@ Responda em PT-BR usando apenas o contexto acima. Indique entre colchetes os
 trechos utilizados, por exemplo [1], [2]."""
 
 
+STYLE_BLOCK_HEADER = (
+    "\nReferência de tom — trechos de atendimentos anteriores (use apenas\n"
+    "para calibrar registro e fraseado; NÃO são fonte factual e NÃO devem ser\n"
+    "citados entre colchetes):\n"
+)
+
+
 def filter_note(category: str | None) -> str:
     """Reminder appended to the prompt when a category filter is active.
 
@@ -42,3 +49,17 @@ def filter_note(category: str | None) -> str:
 
 def format_contexts(chunks: list[str]) -> str:
     return "\n\n".join(f"[{i + 1}] {text}" for i, text in enumerate(chunks))
+
+
+def format_style_block(snippets: list[str]) -> str:
+    """Render the tone-reference block appended to the system prompt.
+
+    Uses letter labels (A, B, …) instead of numbers to structurally separate
+    these snippets from the numbered factual citations — the model is told
+    not to cite them, and the different label scheme makes accidental
+    citation less likely.
+    """
+    if not snippets:
+        return ""
+    body = "\n\n".join(f"({chr(65 + i)}) {text}" for i, text in enumerate(snippets))
+    return STYLE_BLOCK_HEADER + body + "\n"

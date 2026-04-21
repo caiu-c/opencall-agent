@@ -37,6 +37,11 @@ def test_ask_returns_answer_with_sources(client: TestClient, knowledge_collectio
     assert body["sources"], "expected at least one source"
     assert body["sources"][0]["score"] > 0
     assert isinstance(body["answer"], str) and body["answer"].strip()
+    # Two-track retrieval: transcripts are tone reference, never citable.
+    cited = {s["category"] for s in body["sources"]}
+    assert "transcricao" not in cited, (
+        f"transcripts must not appear as citable sources, got {cited}"
+    )
 
 
 def test_ask_refusal_path(client: TestClient, knowledge_collection) -> None:
