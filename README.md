@@ -64,6 +64,6 @@ Especificação do projeto em [`docs/`](./docs/): requisitos, plano de testes e 
 - [x] M5 — Agente LangGraph
 - [x] M6 — Filtros de metadados
 - [x] M7 — Harness de avaliação
-- [ ] M8 — Observabilidade
+- [x] M8 — Observabilidade
 - [ ] M9 — API HTTP
 - [ ] M10 — Deploy

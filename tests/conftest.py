@@ -37,7 +37,14 @@ def settings() -> Settings:
 
 @pytest.fixture(scope="session")
 def knowledge_collection(settings: Settings) -> str:
-    """Ingest the sample corpus once per session into an isolated collection."""
+    """Ingest the sample corpus once per session into an isolated collection.
+
+    Also primes the LLM with a single throwaway call; without it, the first
+    acceptance test to invoke the agent absorbs Ollama's cold-start and
+    skews the US-A1 latency budget.
+    """
+    from opencall_agent.agent import answer as rag_answer
+
     client = make_client(settings)
     if client.collection_exists(ACCEPTANCE_COLLECTION):
         client.delete_collection(ACCEPTANCE_COLLECTION)
@@ -48,6 +55,8 @@ def knowledge_collection(settings: Settings) -> str:
         if category is None:
             continue
         ingest_document(settings, client, path, category=category, collection=ACCEPTANCE_COLLECTION)
+
+    rag_answer(settings, client, "aquecimento", ACCEPTANCE_COLLECTION)
     return ACCEPTANCE_COLLECTION
 
 
