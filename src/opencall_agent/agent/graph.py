@@ -14,6 +14,7 @@ from qdrant_client.models import FieldCondition, Filter, MatchValue
 
 from ..config import Settings
 from ..llm import complete
+from ..observability import get_tracer, set_attr
 from ..vector import Hit, retrieve
 from .prompts import SYSTEM_PROMPT, USER_TEMPLATE, filter_note, format_contexts
 from .rag_chain import REFUSAL_PHRASE, RagResponse, SourceRef
@@ -63,56 +64,67 @@ def _plan_node(state: AgentState) -> dict:
     ReAct shape (AIMessage with tool_calls → ToolMessage → final LLM turn)
     so downstream nodes and trace consumers see a recognizable agent loop.
     """
-    call_id = f"call_{uuid4().hex[:8]}"
-    args: dict = {"query": state["question"]}
-    if state.get("category_filter"):
-        args["category"] = state["category_filter"]
-    ai = AIMessage(
-        content="",
-        tool_calls=[
-            {
-                "id": call_id,
-                "name": RETRIEVE_TOOL_NAME,
-                "args": args,
-            }
-        ],
-    )
-    return {"messages": [ai]}
+    with get_tracer().start_as_current_span("agent.node.llm") as span:
+        call_id = f"call_{uuid4().hex[:8]}"
+        args: dict = {"query": state["question"]}
+        if state.get("category_filter"):
+            args["category"] = state["category_filter"]
+        set_attr(span, "agent.tool_call_id", call_id)
+        set_attr(span, "agent.tool_name", RETRIEVE_TOOL_NAME)
+        set_attr(span, "agent.question", state["question"])
+        ai = AIMessage(
+            content="",
+            tool_calls=[
+                {
+                    "id": call_id,
+                    "name": RETRIEVE_TOOL_NAME,
+                    "args": args,
+                }
+            ],
+        )
+        return {"messages": [ai]}
 
 
 def _retrieve_node(
     state: AgentState, *, settings: Settings, client: QdrantClient
 ) -> dict:
-    last_ai = next(
-        msg for msg in reversed(state["messages"]) if isinstance(msg, AIMessage)
-    )
-    call = last_ai.tool_calls[0]
-    query = call["args"]["query"]
-    category = call["args"].get("category")
+    with get_tracer().start_as_current_span("agent.node.retrieve_tool") as span:
+        last_ai = next(
+            msg for msg in reversed(state["messages"]) if isinstance(msg, AIMessage)
+        )
+        call = last_ai.tool_calls[0]
+        query = call["args"]["query"]
+        category = call["args"].get("category")
+        set_attr(span, "retrieval.query", query)
+        set_attr(span, "retrieval.category", category or "")
 
-    hits = retrieve(
-        settings,
-        client,
-        query,
-        state["collection"],
-        query_filter=_build_filter(category),
-    )
-    sources = [_to_source_ref(h) for h in hits]
-    payload = [
-        {"idx": i + 1, "score": round(h.score, 4), "source": h.source, "text": h.text}
-        for i, h in enumerate(hits)
-    ]
-    tool_msg = ToolMessage(
-        content=json.dumps(payload, ensure_ascii=False),
-        tool_call_id=call["id"],
-        name=RETRIEVE_TOOL_NAME,
-    )
-    return {
-        "hits": hits,
-        "sources": sources,
-        "retrieval_scores": [h.score for h in hits],
-        "messages": [tool_msg],
-    }
+        hits = retrieve(
+            settings,
+            client,
+            query,
+            state["collection"],
+            query_filter=_build_filter(category),
+        )
+        set_attr(span, "retrieval.hits", len(hits))
+        if hits:
+            set_attr(span, "retrieval.top_score", hits[0].score)
+
+        sources = [_to_source_ref(h) for h in hits]
+        payload = [
+            {"idx": i + 1, "score": round(h.score, 4), "source": h.source, "text": h.text}
+            for i, h in enumerate(hits)
+        ]
+        tool_msg = ToolMessage(
+            content=json.dumps(payload, ensure_ascii=False),
+            tool_call_id=call["id"],
+            name=RETRIEVE_TOOL_NAME,
+        )
+        return {
+            "hits": hits,
+            "sources": sources,
+            "retrieval_scores": [h.score for h in hits],
+            "messages": [tool_msg],
+        }
 
 
 def _route_after_retrieve(state: AgentState, *, settings: Settings) -> str:
@@ -123,31 +135,39 @@ def _route_after_retrieve(state: AgentState, *, settings: Settings) -> str:
 
 
 def _synthesize_node(state: AgentState, *, settings: Settings) -> dict:
-    contexts = format_contexts([h.text for h in state["hits"]])
-    user = USER_TEMPLATE.format(
-        question=state["question"],
-        filter_note=filter_note(state.get("category_filter")),
-        contexts=contexts,
-    )
-    prompt_messages = [
-        {"role": "system", "content": SYSTEM_PROMPT},
-        {"role": "user", "content": user},
-    ]
-    text = complete(settings, prompt_messages)
-    return {
-        "answer": text,
-        "refused": False,
-        "messages": [AIMessage(content=text)],
-    }
+    with get_tracer().start_as_current_span("agent.node.synthesize") as span:
+        contexts = format_contexts([h.text for h in state["hits"]])
+        user = USER_TEMPLATE.format(
+            question=state["question"],
+            filter_note=filter_note(state.get("category_filter")),
+            contexts=contexts,
+        )
+        prompt_messages = [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": user},
+        ]
+        set_attr(span, "llm.model", settings.llm_model)
+        set_attr(span, "llm.context_chunks", len(state["hits"]))
+        with get_tracer().start_as_current_span("llm.complete") as llm_span:
+            text = complete(settings, prompt_messages)
+            set_attr(llm_span, "llm.response_chars", len(text))
+        return {
+            "answer": text,
+            "refused": False,
+            "messages": [AIMessage(content=text)],
+        }
 
 
 def _refuse_node(state: AgentState) -> dict:
-    return {
-        "answer": REFUSAL_PHRASE,
-        "refused": True,
-        "sources": [],
-        "messages": [AIMessage(content=REFUSAL_PHRASE)],
-    }
+    with get_tracer().start_as_current_span("agent.node.refuse") as span:
+        top = state["retrieval_scores"][0] if state["retrieval_scores"] else 0.0
+        set_attr(span, "agent.top_score", top)
+        return {
+            "answer": REFUSAL_PHRASE,
+            "refused": True,
+            "sources": [],
+            "messages": [AIMessage(content=REFUSAL_PHRASE)],
+        }
 
 
 def build_graph(settings: Settings, client: QdrantClient):
@@ -212,7 +232,11 @@ def answer(
         "refused": False,
         "answer": "",
     }
-    final = app.invoke(initial)
+    with get_tracer().start_as_current_span("agent.run") as span:
+        set_attr(span, "agent.collection", collection)
+        set_attr(span, "agent.category_filter", category_filter or "")
+        final = app.invoke(initial)
+        set_attr(span, "agent.refused", final["refused"])
     return RagResponse(
         answer=final["answer"],
         sources=final["sources"],
