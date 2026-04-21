@@ -55,6 +55,25 @@ uv run opencall serve
 uv run pytest
 ```
 
+## Deploy via Docker Compose
+
+```bash
+# Usa Ollama já rodando no host (default — mais rápido por compartilhar modelos)
+docker compose up --build -d
+curl -s http://localhost:8000/healthz
+
+# Ingerir o corpus dentro do container
+docker compose exec api python -m opencall_agent.cli ingest-dir data/samples --reset
+
+# Perguntar
+curl -s http://localhost:8000/ask \
+  -H 'content-type: application/json' \
+  -d '{"question":"Qual a validade da receita de antibiótico?"}'
+
+# Alternativa: Ollama containerizado (mais pesado, isolado)
+docker compose --profile ollama up --build -d
+```
+
 Especificação do projeto em [`docs/`](./docs/): requisitos, plano de testes e plano de execução (EN + PT-BR).
 
 ## Status
@@ -69,4 +88,4 @@ Especificação do projeto em [`docs/`](./docs/): requisitos, plano de testes e 
 - [x] M7 — Harness de avaliação
 - [x] M8 — Observabilidade
 - [x] M9 — API HTTP
-- [ ] M10 — Deploy
+- [x] M10 — Deploy

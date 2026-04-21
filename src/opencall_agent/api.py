@@ -15,6 +15,7 @@ from pathlib import Path
 from tempfile import NamedTemporaryFile
 
 from fastapi import Depends, FastAPI, HTTPException, UploadFile
+from fastapi.responses import FileResponse
 from opentelemetry import trace
 from pydantic import BaseModel, Field
 from qdrant_client import QdrantClient
@@ -27,6 +28,7 @@ from .observability import get_tracer
 from .vector import make_client
 
 DEFAULT_COLLECTION = "knowledge"
+INDEX_HTML = Path(__file__).parent / "static" / "index.html"
 
 
 class AskRequest(BaseModel):
@@ -79,6 +81,10 @@ def get_client(settings: Settings = Depends(get_app_settings)) -> QdrantClient:
 
 def create_app() -> FastAPI:
     app = FastAPI(title="opencall-agent", version="0.1.0")
+
+    @app.get("/", include_in_schema=False)
+    def index() -> FileResponse:
+        return FileResponse(INDEX_HTML)
 
     @app.get("/healthz", response_model=HealthResponse)
     def healthz() -> HealthResponse:

@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>opencall-agent</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --panel: #171a21;
+    --border: #262b35;
+    --text: #e6e8eb;
+    --muted: #8b93a1;
+    --accent: #5ea1ff;
+    --accent-press: #4a8ae0;
+    --warn: #f0a661;
+    --ok: #6bc48c;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font: 15px/1.5 system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 32px 20px 80px; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .sub { color: var(--muted); font-size: 13px; margin-bottom: 24px; }
+  .sub code { font-family: var(--mono); background: var(--panel); padding: 1px 6px; border-radius: 4px; }
+  .row { display: flex; gap: 10px; align-items: center; margin-bottom: 12px; }
+  label { color: var(--muted); font-size: 13px; }
+  select, textarea, button {
+    background: var(--panel); color: var(--text); border: 1px solid var(--border);
+    border-radius: 6px; padding: 8px 10px; font: inherit;
+  }
+  textarea { width: 100%; min-height: 84px; resize: vertical; font-family: inherit; }
+  button {
+    cursor: pointer; background: var(--accent); color: #0b1220; border-color: var(--accent);
+    font-weight: 600; padding: 9px 14px;
+  }
+  button:hover:not(:disabled) { background: var(--accent-press); border-color: var(--accent-press); }
+  button:disabled { opacity: .5; cursor: not-allowed; }
+  .actions { display: flex; justify-content: space-between; align-items: center; margin-top: 8px; }
+  .hint { color: var(--muted); font-size: 12px; }
+  .card {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 8px;
+    padding: 16px 18px; margin-top: 20px;
+  }
+  .answer { white-space: pre-wrap; }
+  .answer sup { color: var(--accent); font-weight: 600; cursor: pointer; }
+  .meta { display: flex; gap: 12px; align-items: center; margin-top: 12px; color: var(--muted); font-size: 12px; }
+  .badge { padding: 2px 8px; border-radius: 999px; background: var(--border); color: var(--text); font-size: 11px; }
+  .badge.refused { background: #4a2b1f; color: var(--warn); }
+  .badge.ok { background: #1d3a2a; color: var(--ok); }
+  .sources { margin-top: 14px; border-top: 1px solid var(--border); padding-top: 14px; }
+  .sources h3 { margin: 0 0 8px; font-size: 13px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .5px; }
+  .src { display: grid; grid-template-columns: 28px 1fr auto; gap: 10px; padding: 6px 0; font-size: 13px; border-bottom: 1px dashed var(--border); }
+  .src:last-child { border-bottom: 0; }
+  .src .idx { color: var(--accent); font-family: var(--mono); }
+  .src .path { font-family: var(--mono); overflow-wrap: anywhere; }
+  .src .score { color: var(--muted); font-variant-numeric: tabular-nums; }
+  .src .cat { color: var(--muted); font-size: 12px; margin-left: 8px; }
+  .err { color: var(--warn); margin-top: 12px; }
+  .trace { font-family: var(--mono); font-size: 11px; color: var(--muted); overflow-wrap: anywhere; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>opencall-agent</h1>
+  <div class="sub">Agente RAG de suporte farmacêutico. API: <code>POST /ask</code> · <code>GET /docs</code>.</div>
+
+  <form id="f">
+    <textarea id="q" placeholder="Ex.: Qual a validade da receita de antibiótico?" autofocus></textarea>
+    <div class="actions">
+      <div class="row" style="margin: 0;">
+        <label for="cat">Categoria:</label>
+        <select id="cat">
+          <option value="">todas</option>
+          <option value="politica">politica</option>
+          <option value="faq">faq</option>
+          <option value="transcricao">transcricao</option>
+        </select>
+      </div>
+      <button id="go" type="submit">Perguntar</button>
+    </div>
+    <div class="hint">Enter envia, Shift+Enter quebra linha.</div>
+  </form>
+
+  <div id="out"></div>
+</div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const out = $("out"), q = $("q"), go = $("go"), cat = $("cat"), f = $("f");
+
+q.addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); f.requestSubmit(); }
+});
+
+f.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const question = q.value.trim();
+  if (!question) return;
+  go.disabled = true; go.textContent = "pensando…";
+  out.innerHTML = "";
+  const t0 = performance.now();
+  try {
+    const r = await fetch("/ask", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        question,
+        category_filter: cat.value || null,
+      }),
+    });
+    const dt = ((performance.now() - t0) / 1000).toFixed(2);
+    if (!r.ok) {
+      out.innerHTML = `<div class="card err">HTTP ${r.status}: ${escapeHtml(await r.text())}</div>`;
+      return;
+    }
+    renderAnswer(await r.json(), dt);
+  } catch (err) {
+    out.innerHTML = `<div class="card err">Falha: ${escapeHtml(String(err))}</div>`;
+  } finally {
+    go.disabled = false; go.textContent = "Perguntar";
+  }
+});
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+function renderAnswer(body, dt) {
+  const answerHtml = escapeHtml(body.answer || "").replace(/\[(\d+)\]/g, '<sup data-ref="$1">[$1]</sup>');
+  const status = body.refused
+    ? '<span class="badge refused">refused</span>'
+    : '<span class="badge ok">answered</span>';
+  const srcRows = (body.sources || []).map((s, i) => `
+    <div class="src" data-idx="${i + 1}">
+      <div class="idx">[${i + 1}]</div>
+      <div><span class="path">${escapeHtml(s.source)}</span><span class="cat">· ${escapeHtml(s.category)}</span></div>
+      <div class="score">${s.score.toFixed(3)}</div>
+    </div>`).join("");
+  const sourcesBlock = srcRows
+    ? `<div class="sources"><h3>Fontes</h3>${srcRows}</div>`
+    : (body.refused ? "" : `<div class="sources"><h3>Fontes</h3><div class="hint">(sem fontes)</div></div>`);
+  out.innerHTML = `
+    <div class="card">
+      <div class="answer">${answerHtml || '<span class="hint">(resposta vazia)</span>'}</div>
+      <div class="meta">${status}<span>${dt}s</span>${body.trace_id ? `<span class="trace">trace=${escapeHtml(body.trace_id)}</span>` : ""}</div>
+      ${sourcesBlock}
+    </div>`;
+
+  // highlight source row when a [n] in the answer is clicked
+  out.querySelectorAll("sup[data-ref]").forEach((el) => {
+    el.addEventListener("click", () => {
+      const idx = el.getAttribute("data-ref");
+      const row = out.querySelector(`.src[data-idx="${idx}"]`);
+      if (row) { row.scrollIntoView({ behavior: "smooth", block: "center" }); row.style.background = "#1e2838"; setTimeout(() => row.style.background = "", 800); }
+    });
+  });
+}
+</script>
+</body>
+</html>
